@@ -1,0 +1,201 @@
+/* Custom styles for HDRS Realty Co. - Luxury Design */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom gold color adjustments */
+.text-gold {
+    color: #B8860B;
+}
+
+.bg-gold {
+    background-color: #B8860B;
+}
+
+.bg-dark-gold {
+    background-color: #8B6914;
+}
+
+.text-dark-gold {
+    color: #8B6914;
+}
+
+.border-dark-gold {
+    border-color: #8B6914;
+}
+
+/* Typography */
+body {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Hero section adjustments */
+#home {
+    margin-top: 0;
+}
+
+/* Button hover effects */
+.hover\:bg-gold:hover {
+    background-color: #B8860B;
+}
+
+.hover\:text-gold:hover {
+    color: #B8860B;
+}
+
+/* Form focus states */
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #8B6914;
+    box-shadow: 0 0 0 3px rgba(139, 105, 20, 0.1);
+}
+
+/* Header backdrop blur effect */
+header {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Chart container */
+#homeValuesChart {
+    max-height: 400px;
+    width: 100% !important;
+    height: 400px !important;
+}
+
+/* Statistics cards animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card {
+    animation: slideUp 0.6s ease-out;
+}
+
+.stat-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+/* Listings carousel adjustments */
+#listingsCarousel {
+    min-height: 500px;
+}
+
+/* Property cards */
+.property-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transitions */
+* {
+    transition-property: color, background-color, border-color, transform, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+/* Mobile menu adjustments */
+@media (max-width: 768px) {
+    #listingsCarousel {
+        grid-template-columns: 1fr;
+    }
+    
+    #prevBtn,
+    #nextBtn {
+        display: none;
+    }
+    
+    header nav {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+/* Luxury aesthetic enhancements */
+section {
+    position: relative;
+}
+
+/* Text selection */
+::selection {
+    background-color: #8B6914;
+    color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8B6914;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #B8860B;
+}

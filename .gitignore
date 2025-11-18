@@ -1,0 +1,37 @@
+# Search tracking data (contains user data)
+search_tracking.json
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*~
+
+# PHP session files
+*.sess
+
+# Environment files
+.env
+.env.local
+
+# cPanel specific
+cpanel/
+.htpasswd
+

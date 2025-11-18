@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /assets/php/
+
+# Sitemap (update with your actual domain)
+# Sitemap: https://yourdomain.com/sitemap.xml
+
