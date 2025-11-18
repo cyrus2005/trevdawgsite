@@ -1,0 +1,18 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/cyrus2005/public_html/
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R .htaccess $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp -R robots.txt $DEPLOYPATH 2>/dev/null || true
+    - /bin/chmod 755 $DEPLOYPATH
+    - /bin/chmod 644 $DEPLOYPATH/*.html
+    - /bin/chmod 644 $DEPLOYPATH/*.php
+    - /bin/chmod 755 $DEPLOYPATH/assets
+    - /bin/chmod 755 $DEPLOYPATH/assets/php
+    - /bin/chmod 644 $DEPLOYPATH/assets/php/*.php
+    - /bin/chmod 755 $DEPLOYPATH/cities
+    - /bin/chmod 644 $DEPLOYPATH/cities/*.html
+    - /bin/touch $DEPLOYPATH/search_tracking.json
+    - /bin/chmod 666 $DEPLOYPATH/search_tracking.json
+
