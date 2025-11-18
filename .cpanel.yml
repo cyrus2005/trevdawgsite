@@ -1,18 +1,17 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/cyrus2005/public_html/
-    - /bin/cp -R * $DEPLOYPATH
-    - /bin/cp -R .htaccess $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -R robots.txt $DEPLOYPATH 2>/dev/null || true
-    - /bin/chmod 755 $DEPLOYPATH
-    - /bin/chmod 644 $DEPLOYPATH/*.html
-    - /bin/chmod 644 $DEPLOYPATH/*.php
-    - /bin/chmod 755 $DEPLOYPATH/assets
-    - /bin/chmod 755 $DEPLOYPATH/assets/php
-    - /bin/chmod 644 $DEPLOYPATH/assets/php/*.php
-    - /bin/chmod 755 $DEPLOYPATH/cities
-    - /bin/chmod 644 $DEPLOYPATH/cities/*.html
-    - /bin/touch $DEPLOYPATH/search_tracking.json
-    - /bin/chmod 666 $DEPLOYPATH/search_tracking.json
+    - /bin/cp -R * $HOME/public_html/
+    - /bin/cp -R .htaccess $HOME/public_html/ 2>/dev/null || true
+    - /bin/cp -R robots.txt $HOME/public_html/ 2>/dev/null || true
+    - /bin/chmod 755 $HOME/public_html/
+    - /bin/chmod 644 $HOME/public_html/*.html 2>/dev/null || true
+    - /bin/chmod 644 $HOME/public_html/*.php 2>/dev/null || true
+    - /bin/chmod 755 $HOME/public_html/assets 2>/dev/null || true
+    - /bin/chmod 755 $HOME/public_html/assets/php 2>/dev/null || true
+    - /bin/chmod 644 $HOME/public_html/assets/php/*.php 2>/dev/null || true
+    - /bin/chmod 755 $HOME/public_html/cities 2>/dev/null || true
+    - /bin/chmod 644 $HOME/public_html/cities/*.html 2>/dev/null || true
+    - /bin/touch $HOME/public_html/search_tracking.json
+    - /bin/chmod 666 $HOME/public_html/search_tracking.json
 
