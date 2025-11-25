@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HDRS Realty Co. - Trevor Hondros | Your Trusted Real Estate Professional</title>
-    <meta name="description" content="Professional real estate services with Trevor Hondros at HDRS Realty Co. Buy, sell, or invest in real estate with confidence.">
+    <title>HDRS Realty Co. - Trevor Hondros | Housing Decisions made Ridiculously Simple</title>
+    <meta name="description" content="Housing Decisions made Ridiculously Simple. Professional real estate services with Trevor Hondros at HDRS Realty Co. Buy, sell, or invest in real estate with confidence.">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS (Local) -->
+    <script src="assets/lib/tailwind.min.js"></script>
     
-    <!-- Chart.js for the home values graph -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js for the home values graph (Local) -->
+    <script src="assets/lib/chart.min.js"></script>
+    
+    <!-- Local Fonts -->
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -23,154 +26,277 @@
                     colors: {
                         'gold': '#B8860B',
                         'dark-gold': '#8B6914',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-white text-black">
+<body class="bg-white text-black font-sans">
     
     <!-- Header -->
-    <header class="fixed top-0 w-full bg-white shadow-md z-50">
-        <nav class="container mx-auto px-4 py-4">
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-gray-100">
+        <nav class="container mx-auto px-4 md:px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold">
-                    <span class="text-dark-gold">HDRS</span> <span class="text-black">Realty Co.</span>
+                <div class="text-lg md:text-xl font-serif font-bold tracking-tight">
+                    <span class="text-dark-gold">HDRS</span> <span class="text-black">REALTY CO.</span>
                 </div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="hover:text-dark-gold transition">Home</a>
-                    <a href="#listings" class="hover:text-dark-gold transition">Listings</a>
-                    <a href="#about" class="hover:text-dark-gold transition">About</a>
-                    <a href="#contact" class="hover:text-dark-gold transition">Contact</a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#hero" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">HOME</a>
+                    <a href="#search" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">SEARCH HOMES</a>
+                    <a href="#whereWeWork" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">WHERE WE WORK</a>
+                    <div class="relative group">
+                        <a href="#" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide flex items-center">
+                            WHO WE SERVE
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <a href="cities/pearland.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">Pearland Real Estate</a>
+                                <a href="cities/league-city.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">League City Real Estate</a>
+                                <a href="cities/friendswood.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">Friendswood Real Estate</a>
+                                <a href="cities/clear-lake.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">Clear Lake Real Estate</a>
+                                <a href="cities/pasadena.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">Pasadena Real Estate</a>
+                                <a href="cities/sugar-land.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">Sugar Land Real Estate</a>
+                                <a href="cities/missouri-city.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">Missouri City Real Estate</a>
+                                <a href="cities/alvin.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">Alvin Real Estate</a>
+                                <a href="cities/manvel.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">Manvel Real Estate</a>
+                                <a href="cities/webster.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">Webster Real Estate</a>
+                                <a href="cities/seabrook.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">Seabrook Real Estate</a>
+                                <a href="cities/la-porte.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">La Porte Real Estate</a>
+                                <a href="cities/deer-park.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">Deer Park Real Estate</a>
+                                <a href="cities/south-houston.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-dark-gold hover:text-white transition">South Houston Real Estate</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#about" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">WHO WE ARE</a>
+                    <a href="#contact" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">CONNECT</a>
                 </div>
-                <a href="#contact" class="bg-dark-gold text-white px-6 py-2 rounded-lg hover:bg-gold transition">
-                    Get Started
-                </a>
+                
+                <!-- Desktop Contact -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="tel:7134080604" class="text-sm font-medium text-dark-gold hover:text-gold transition">
+                        (713) 408-0604
+                    </a>
+                    <a href="#contact" class="text-sm font-medium text-dark-gold border border-dark-gold px-4 md:px-6 py-2 hover:bg-dark-gold hover:text-white transition tracking-wide">
+                        CONTACT
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" type="button" class="md:hidden text-dark-gold hover:text-gold transition z-50" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="#hero" onclick="toggleMobileMenu()" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition py-2">HOME</a>
+                    <a href="#search" onclick="toggleMobileMenu()" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition py-2">SEARCH HOMES</a>
+                    <a href="#whereWeWork" onclick="toggleMobileMenu()" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition py-2">WHERE WE WORK</a>
+                    
+                    <!-- Mobile Dropdown for WHO WE SERVE -->
+                    <div class="pt-2 border-t border-gray-200">
+                        <button type="button" onclick="toggleMobileDropdown(event)" class="w-full flex items-center justify-between text-sm font-medium text-gray-700 hover:text-dark-gold transition py-2">
+                            <span>WHO WE SERVE</span>
+                            <svg id="mobileDropdownIcon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobileDropdown" class="hidden pl-4 pt-2 mt-2">
+                            <div class="grid grid-cols-2 gap-2">
+                                <a href="cities/pearland.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">Pearland</a>
+                                <a href="cities/league-city.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">League City</a>
+                                <a href="cities/friendswood.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">Friendswood</a>
+                                <a href="cities/clear-lake.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">Clear Lake</a>
+                                <a href="cities/pasadena.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">Pasadena</a>
+                                <a href="cities/sugar-land.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">Sugar Land</a>
+                                <a href="cities/missouri-city.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">Missouri City</a>
+                                <a href="cities/webster.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">Webster</a>
+                                <a href="cities/alvin.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">Alvin</a>
+                                <a href="cities/manvel.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">Manvel</a>
+                                <a href="cities/seabrook.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">Seabrook</a>
+                                <a href="cities/la-porte.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">La Porte</a>
+                                <a href="cities/deer-park.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">Deer Park</a>
+                                <a href="cities/south-houston.html" onclick="toggleMobileMenu()" class="text-xs text-gray-600 hover:text-dark-gold transition py-1">South Houston</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#about" onclick="toggleMobileMenu()" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition py-2">WHO WE ARE</a>
+                    <a href="#contact" onclick="toggleMobileMenu()" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition py-2">CONNECT</a>
+                    <a href="tel:7134080604" onclick="toggleMobileMenu()" class="text-sm font-medium text-dark-gold hover:text-gold transition py-2">
+                        📞 (713) 408-0604
+                    </a>
+                </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center text-center">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80');">
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <!-- Hero Section with Search and Action Options -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center py-24 pt-32">
+        <!-- Background Property Image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/media/properties/hero-background.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
-        <div class="relative z-10 text-white px-4">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">HDRS Realty Co.</h1>
-            <p class="text-xl md:text-2xl mb-8">Your Trusted Real Estate Partner</p>
-            <a href="#contact" class="bg-dark-gold text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold transition inline-block">
-                Start Your Journey Today
-            </a>
-        </div>
-    </section>
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
+            <!-- Success/Error Messages -->
+            <?php if (isset($_GET['formSubmitted']) && $_GET['formSubmitted'] == '1'): ?>
+                <div class="mb-8 bg-green-100 border-2 border-green-500 text-green-800 px-6 py-4 rounded-lg text-center">
+                    <p class="text-lg font-semibold mb-2">Thank you for your submission!</p>
+                    <p class="text-base">We will be back to you shortly.</p>
+                </div>
+            <?php elseif (isset($_GET['error']) && $_GET['error'] == '1' && isset($_GET['type'])): ?>
+                <div class="mb-8 bg-red-100 border-2 border-red-500 text-red-800 px-6 py-4 rounded-lg text-center">
+                    <p class="text-lg font-semibold">There was an error submitting your form. Please try again or contact us directly.</p>
+                </div>
+            <?php else: ?>
+                <div id="formSuccessMessage" class="hidden mb-8 bg-green-100 border-2 border-green-500 text-green-800 px-6 py-4 rounded-lg text-center">
+                    <p class="text-lg font-semibold mb-2">Thank you for your submission!</p>
+                    <p class="text-base">We will be back to you shortly.</p>
+                </div>
+                <div id="formErrorMessage" class="hidden mb-8 bg-red-100 border-2 border-red-500 text-red-800 px-6 py-4 rounded-lg text-center">
+                    <p class="text-lg font-semibold">There was an error submitting your form. Please try again or contact us directly.</p>
+                </div>
+            <?php endif; ?>
 
-    <!-- Stats Section -->
-    <section class="py-16 bg-dark-gold text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div>
-                    <div class="text-4xl font-bold mb-2">$5M</div>
-                    <div class="text-lg">Sales Volume This Year</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">18+</div>
-                    <div class="text-lg">Clients This Year</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">3</div>
-                    <div class="text-lg">Years Experience</div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- Main Search Bar with Options -->
+            <div class="text-center mb-12 px-4">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-serif font-bold mb-4 text-white drop-shadow-lg">HDRS REALTY CO.</h1>
+                <p class="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 drop-shadow-md">Housing Decisions made Ridiculously Simple</p>
+                
+                <!-- Search Bar Style Interface -->
+                <div class="bg-white/95 backdrop-blur-sm rounded-lg shadow-2xl p-4 sm:p-6 md:p-8 max-w-4xl mx-auto">
+                    <h2 class="text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-6 sm:mb-8 text-gray-800">What are you looking for?</h2>
+                    
+                    <!-- Three Option Buttons styled like search options -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                        <!-- Buy Option -->
+                        <button onclick="window.location.href='#search'" class="bg-white border-2 border-gray-300 rounded-lg p-4 sm:p-6 hover:border-dark-gold hover:shadow-lg transition-all group text-left">
+                            <div class="flex items-center justify-between mb-2 sm:mb-3">
+                                <div class="text-2xl sm:text-3xl">🏠</div>
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-dark-gold transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-serif font-bold mb-1 sm:mb-2 text-gray-800 group-hover:text-dark-gold transition">Buy</h3>
+                            <p class="text-xs sm:text-sm text-gray-600">Find your dream home</p>
+                        </button>
 
-    <!-- Services Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Why Choose HDRS Realty Co.?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center p-6 border-2 border-gray-200 rounded-lg hover:border-dark-gold transition">
-                    <div class="text-5xl mb-4">🏠</div>
-                    <h3 class="text-2xl font-bold mb-4">Expert Buying</h3>
-                    <p class="text-gray-600">Find your dream home with our expert guidance and local market knowledge.</p>
-                </div>
-                <div class="text-center p-6 border-2 border-gray-200 rounded-lg hover:border-dark-gold transition">
-                    <div class="text-5xl mb-4">💰</div>
-                    <h3 class="text-2xl font-bold mb-4">Smart Selling</h3>
-                    <p class="text-gray-600">Maximize your property value with our proven marketing strategies.</p>
-                </div>
-                <div class="text-center p-6 border-2 border-gray-200 rounded-lg hover:border-dark-gold transition">
-                    <div class="text-5xl mb-4">📈</div>
-                    <h3 class="text-2xl font-bold mb-4">Investment Opportunities</h3>
-                    <p class="text-gray-600">Build wealth through strategic real estate investments.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <!-- Sell Option -->
+                        <button onclick="showSellForm()" class="bg-white border-2 border-gray-300 rounded-lg p-4 sm:p-6 hover:border-dark-gold hover:shadow-lg transition-all group text-left">
+                            <div class="flex items-center justify-between mb-2 sm:mb-3">
+                                <div class="text-2xl sm:text-3xl">💰</div>
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-dark-gold transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-serif font-bold mb-1 sm:mb-2 text-gray-800 group-hover:text-dark-gold transition">Sell</h3>
+                            <p class="text-xs sm:text-sm text-gray-600">Get the best value</p>
+                        </button>
 
-    <!-- Home Values Graph Section -->
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Market Performance Insights</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Track the growth of real estate investments and market trends over time</p>
-            </div>
-            
-            <!-- Key Statistics Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
-                <div class="stat-card bg-gradient-to-br from-dark-gold to-gold text-white p-6 rounded-lg shadow-lg">
-                    <p class="text-sm font-medium mb-2 opacity-90">Average Annual Return</p>
-                    <p class="text-4xl font-serif font-bold mb-1">8.5%</p>
-                    <p class="text-xs opacity-75">5-Year Average</p>
-                </div>
-                <div class="stat-card bg-gray-50 border-2 border-dark-gold p-6 rounded-lg">
-                    <p class="text-sm font-medium text-gray-600 mb-2">Average Days on Market</p>
-                    <p class="text-4xl font-serif font-bold text-dark-gold mb-1">32</p>
-                    <p class="text-xs text-gray-500">Days</p>
-                </div>
-                <div class="stat-card bg-gray-50 border-2 border-dark-gold p-6 rounded-lg">
-                    <p class="text-sm font-medium text-gray-600 mb-2">Total Transactions</p>
-                    <p class="text-4xl font-serif font-bold text-dark-gold mb-1">500+</p>
-                    <p class="text-xs text-gray-500">Properties Sold</p>
-                </div>
-            </div>
-
-            <!-- Graph Container -->
-            <div class="max-w-6xl mx-auto">
-                <div class="bg-white border-2 border-gray-100 rounded-lg shadow-lg p-8 md:p-12">
-                    <div class="mb-6">
-                        <h3 class="text-2xl font-serif font-bold mb-2">Annual Return on Home Values</h3>
-                        <p class="text-sm text-gray-600">Percentage growth year-over-year</p>
-                    </div>
-                    <div class="relative" style="height: 400px;">
-                        <canvas id="homeValuesChart"></canvas>
+                        <!-- Evaluate Option -->
+                        <button onclick="showEvaluateForm()" class="bg-white border-2 border-gray-300 rounded-lg p-4 sm:p-6 hover:border-dark-gold hover:shadow-lg transition-all group text-left">
+                            <div class="flex items-center justify-between mb-2 sm:mb-3">
+                                <div class="text-2xl sm:text-3xl">📊</div>
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-dark-gold transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-serif font-bold mb-1 sm:mb-2 text-gray-800 group-hover:text-dark-gold transition">Evaluate</h3>
+                            <p class="text-xs sm:text-sm text-gray-600">Professional evaluation</p>
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Recent Listings Section -->
-    <section id="listings" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Recent Sales</h2>
-            <div class="relative">
-                <div id="listingsCarousel" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Listings will be populated by JavaScript -->
+            <!-- Sell Form (Hidden by default) -->
+            <div id="sellForm" class="hidden bg-white rounded-lg shadow-2xl p-4 sm:p-6 md:p-8 mb-8">
+                <div class="flex justify-between items-center mb-4 sm:mb-6">
+                    <h2 class="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-gray-800">Sell Your Property</h2>
+                    <button onclick="hideSellForm()" class="text-gray-500 hover:text-dark-gold text-2xl sm:text-3xl">&times;</button>
                 </div>
-                <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-dark-gold text-white p-3 rounded-full hover:bg-gold transition">
-                    ‹
-                </button>
-                <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-dark-gold text-white p-3 rounded-full hover:bg-gold transition">
-                    ›
-                </button>
+                <form id="sellFormElement" action="assets/php/sell_evaluate.php" method="POST" class="space-y-4">
+                    <input type="hidden" name="formType" value="sell">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="sellFirstName" class="block mb-2 text-sm font-medium text-gray-700">First Name *</label>
+                            <input type="text" id="sellFirstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                        </div>
+                        <div>
+                            <label for="sellLastName" class="block mb-2 text-sm font-medium text-gray-700">Last Name *</label>
+                            <input type="text" id="sellLastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="sellEmail" class="block mb-2 text-sm font-medium text-gray-700">Email Address *</label>
+                        <input type="email" id="sellEmail" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                    </div>
+                    <div>
+                        <label for="sellPhone" class="block mb-2 text-sm font-medium text-gray-700">Phone Number *</label>
+                        <input type="tel" id="sellPhone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                    </div>
+                    <div>
+                        <label for="sellAddress" class="block mb-2 text-sm font-medium text-gray-700">Property Address *</label>
+                        <input type="text" id="sellAddress" name="address" required placeholder="Street address, City, State, ZIP" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                    </div>
+                    <button type="submit" class="w-full bg-dark-gold text-white px-8 py-4 text-lg font-medium tracking-wide hover:bg-gold transition rounded-lg">
+                        SUBMIT
+                    </button>
+                </form>
+            </div>
+
+            <!-- Evaluate Form (Hidden by default) -->
+            <div id="evaluateForm" class="hidden bg-white rounded-lg shadow-2xl p-4 sm:p-6 md:p-8 mb-8">
+                <div class="flex justify-between items-center mb-4 sm:mb-6">
+                    <h2 class="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-gray-800">Evaluate Your Property</h2>
+                    <button onclick="hideEvaluateForm()" class="text-gray-500 hover:text-dark-gold text-2xl sm:text-3xl">&times;</button>
+                </div>
+                <form id="evaluateFormElement" action="assets/php/sell_evaluate.php" method="POST" class="space-y-4">
+                    <input type="hidden" name="formType" value="evaluate">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="evalFirstName" class="block mb-2 text-sm font-medium text-gray-700">First Name *</label>
+                            <input type="text" id="evalFirstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                        </div>
+                        <div>
+                            <label for="evalLastName" class="block mb-2 text-sm font-medium text-gray-700">Last Name *</label>
+                            <input type="text" id="evalLastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="evalEmail" class="block mb-2 text-sm font-medium text-gray-700">Email Address *</label>
+                        <input type="email" id="evalEmail" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                    </div>
+                    <div>
+                        <label for="evalPhone" class="block mb-2 text-sm font-medium text-gray-700">Phone Number *</label>
+                        <input type="tel" id="evalPhone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                    </div>
+                    <div>
+                        <label for="evalAddress" class="block mb-2 text-sm font-medium text-gray-700">Property Address *</label>
+                        <input type="text" id="evalAddress" name="address" required placeholder="Street address, City, State, ZIP" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                    </div>
+                    <button type="submit" class="w-full bg-dark-gold text-white px-8 py-4 text-lg font-medium tracking-wide hover:bg-gold transition rounded-lg">
+                        SUBMIT
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- About Trevor Hondros Section -->
-    <section id="about" class="py-24 bg-gray-50">
+    <section id="about" class="py-24 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">About Trevor Hondros</h2>
@@ -178,7 +304,7 @@
             </div>
             
             <div class="max-w-6xl mx-auto">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-gray-100">
                     <div class="grid md:grid-cols-2 gap-0">
                         <!-- Image/Profile Section -->
                         <div class="relative h-96 md:h-auto bg-gradient-to-br from-dark-gold to-gold">
@@ -263,46 +389,274 @@
                         <p class="text-sm font-medium text-gray-600">Client Satisfaction</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Where We Work Section -->
+    <section id="whereWeWork" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Where We Work</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Serving communities across the Greater Houston area</p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <!-- Main Cities Grid -->
+                <div id="citiesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 mb-8">
+                    <a href="cities/pearland.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">Pearland</h3>
+                    </a>
+                    <a href="cities/league-city.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">League City</h3>
+                    </a>
+                    <a href="cities/friendswood.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">Friendswood</h3>
+                    </a>
+                    <a href="cities/clear-lake.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">Clear Lake</h3>
+                    </a>
+                    <a href="cities/pasadena.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">Pasadena</h3>
+                    </a>
+                    <a href="cities/sugar-land.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">Sugar Land</h3>
+                    </a>
+                    <a href="cities/missouri-city.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">Missouri City</h3>
+                    </a>
+                    <a href="cities/webster.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">Webster</h3>
+                    </a>
+                </div>
+
+                <!-- More Cities (Hidden by default) -->
+                <div id="moreCities" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 mb-8">
+                    <a href="cities/alvin.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">Alvin</h3>
+                    </a>
+                    <a href="cities/manvel.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">Manvel</h3>
+                    </a>
+                    <a href="cities/seabrook.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">Seabrook</h3>
+                    </a>
+                    <a href="cities/la-porte.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">La Porte</h3>
+                    </a>
+                    <a href="cities/deer-park.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">Deer Park</h3>
+                    </a>
+                    <a href="cities/south-houston.html" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl hover:border-2 hover:border-dark-gold transition group">
+                        <h3 class="text-lg font-serif font-bold text-gray-800 group-hover:text-dark-gold transition">South Houston</h3>
+                    </a>
+                </div>
+
+                <!-- And More Button -->
+                <div class="text-center">
+                    <button id="moreCitiesBtn" onclick="toggleMoreCities()" class="bg-dark-gold text-white px-8 py-3 rounded-lg hover:bg-gold transition font-medium">
+                        And More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-dark-gold text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div>
+                    <div class="text-5xl font-serif font-bold mb-3">$5M</div>
+                    <div class="text-sm font-medium tracking-wide uppercase">Sales Volume This Year</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-serif font-bold mb-3">18+</div>
+                    <div class="text-sm font-medium tracking-wide uppercase">Clients This Year</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-serif font-bold mb-3">3</div>
+                    <div class="text-sm font-medium tracking-wide uppercase">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Values Graph Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Market Performance Insights</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Track the growth of real estate investments and market trends over time</p>
+            </div>
+            
+            <!-- Key Statistics Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
+                <div class="stat-card bg-gradient-to-br from-dark-gold to-gold text-white p-6 rounded-lg shadow-lg">
+                    <p class="text-sm font-medium mb-2 opacity-90">Average Annual Return</p>
+                    <p class="text-4xl font-serif font-bold mb-1">8.5%</p>
+                    <p class="text-xs opacity-75">5-Year Average</p>
+                </div>
+                <div class="stat-card bg-gray-50 border-2 border-dark-gold p-6 rounded-lg">
+                    <p class="text-sm font-medium text-gray-600 mb-2">Average Home Value Increase</p>
+                    <p class="text-4xl font-serif font-bold text-dark-gold mb-1">12%</p>
+                    <p class="text-xs text-gray-500">This Year</p>
+                </div>
+                <div class="stat-card bg-gray-50 border-2 border-dark-gold p-6 rounded-lg">
+                    <p class="text-sm font-medium text-gray-600 mb-2">Average Equity Gain</p>
+                    <p class="text-4xl font-serif font-bold text-dark-gold mb-1">$45K</p>
+                    <p class="text-xs text-gray-500">Per Property</p>
+                </div>
+            </div>
+
+            <!-- Graph Container -->
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-white border-2 border-gray-100 rounded-lg shadow-lg p-8 md:p-12">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-serif font-bold mb-2">Annual Return on Home Values</h3>
+                        <p class="text-sm text-gray-600">Percentage growth year-over-year</p>
+                    </div>
+                    <div class="relative" style="height: 400px;">
+                        <canvas id="homeValuesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Search Section (Detailed) -->
+    <section id="search" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Search All Homes</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Find your perfect property with our comprehensive search tool</p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <!-- Search Form -->
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                    <form id="homeSearchForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="city" class="block mb-2 text-sm font-medium text-gray-700">City</label>
+                                <input type="text" id="city" name="city" placeholder="e.g., Houston, League City" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                            </div>
+                            <div>
+                                <label for="zipCode" class="block mb-2 text-sm font-medium text-gray-700">Zip Code</label>
+                                <input type="text" id="zipCode" name="zipCode" placeholder="e.g., 77573" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="minPrice" class="block mb-2 text-sm font-medium text-gray-700">Min Price</label>
+                                <select id="minPrice" name="minPrice" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                                    <option value="">No Min</option>
+                                    <option value="50000">$50,000</option>
+                                    <option value="100000">$100,000</option>
+                                    <option value="150000">$150,000</option>
+                                    <option value="200000">$200,000</option>
+                                    <option value="250000">$250,000</option>
+                                    <option value="300000">$300,000</option>
+                                    <option value="400000">$400,000</option>
+                                    <option value="500000">$500,000</option>
+                                    <option value="750000">$750,000</option>
+                                    <option value="1000000">$1,000,000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="maxPrice" class="block mb-2 text-sm font-medium text-gray-700">Max Price</label>
+                                <select id="maxPrice" name="maxPrice" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                                    <option value="">No Max</option>
+                                    <option value="200000">$200,000</option>
+                                    <option value="250000">$250,000</option>
+                                    <option value="300000">$300,000</option>
+                                    <option value="400000">$400,000</option>
+                                    <option value="500000">$500,000</option>
+                                    <option value="750000">$750,000</option>
+                                    <option value="1000000">$1,000,000</option>
+                                    <option value="1500000">$1,500,000</option>
+                                    <option value="2000000">$2,000,000+</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div>
+                                <label for="bedrooms" class="block mb-2 text-sm font-medium text-gray-700">Bedrooms</label>
+                                <select id="bedrooms" name="bedrooms" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                                    <option value="">Any</option>
+                                    <option value="1">1+</option>
+                                    <option value="2">2+</option>
+                                    <option value="3">3+</option>
+                                    <option value="4">4+</option>
+                                    <option value="5">5+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="bathrooms" class="block mb-2 text-sm font-medium text-gray-700">Bathrooms</label>
+                                <select id="bathrooms" name="bathrooms" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                                    <option value="">Any</option>
+                                    <option value="1">1+</option>
+                                    <option value="2">2+</option>
+                                    <option value="2.5">2.5+</option>
+                                    <option value="3">3+</option>
+                                    <option value="4">4+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="propertyType" class="block mb-2 text-sm font-medium text-gray-700">Property Type</label>
+                                <select id="propertyType" name="propertyType" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                                    <option value="all">All Types</option>
+                                    <option value="single-family">Single Family</option>
+                                    <option value="townhouse">Townhouse</option>
+                                    <option value="condo">Condo</option>
+                                    <option value="multi-family">Multi-Family</option>
+                                    <option value="land">Land</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="searchEmail" class="block mb-2 text-sm font-medium text-gray-700">Email Address *</label>
+                            <input type="email" id="searchEmail" name="email" required placeholder="your@email.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                            <p class="text-xs text-gray-500 mt-1">We'll send you matching properties and save your search</p>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-dark-gold text-white px-8 py-4 text-sm font-medium tracking-wide hover:bg-gold transition rounded-lg">
+                            SEARCH PROPERTIES
+                        </button>
+                    </form>
+                </div>
                 
-                <!-- Recognition Section -->
-                <div class="mt-12 bg-white rounded-lg shadow-lg p-8 md:p-12">
-                    <h4 class="text-2xl font-serif font-bold mb-8 text-center text-dark-gold">Recognition & Achievements</h4>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-12 h-12 bg-dark-gold rounded-full flex items-center justify-center">
-                                <span class="text-white font-bold">🏆</span>
+                <!-- Search Results Section -->
+                <div id="searchResults" class="hidden">
+                    <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-serif font-bold text-dark-gold">Search Results</h3>
+                            <button onclick="document.getElementById('searchResults').classList.add('hidden')" class="text-gray-500 hover:text-dark-gold">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <p id="searchCriteriaSummary" class="text-gray-600 mb-4"></p>
+                        <div id="searchError" class="hidden"></div>
+                        <div id="searchLoading" class="hidden text-center py-8">
+                            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-dark-gold"></div>
+                            <p class="mt-4 text-gray-600">Searching properties...</p>
+                        </div>
+                        <div id="listingsContainer" class="hidden">
+                            <div id="listingsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <!-- Listings will be populated here -->
                             </div>
-                            <div>
-                                <h5 class="font-semibold text-gray-900 mb-1">Top Real Estate Professional</h5>
-                                <p class="text-sm text-gray-600">Ranked among top real estate professionals in Texas</p>
+                            <div id="noResults" class="hidden text-center py-12">
+                                <p class="text-gray-600 text-lg mb-4">No properties found matching your criteria.</p>
+                                <p class="text-gray-500">Try adjusting your search filters.</p>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-12 h-12 bg-dark-gold rounded-full flex items-center justify-center">
-                                <span class="text-white font-bold">📊</span>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-gray-900 mb-1">Sales Volume Leader</h5>
-                                <p class="text-sm text-gray-600">Recognized among top agents based on sales volume</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-12 h-12 bg-dark-gold rounded-full flex items-center justify-center">
-                                <span class="text-white font-bold">💼</span>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-gray-900 mb-1">Luxury Specialist</h5>
-                                <p class="text-sm text-gray-600">Specialized in luxury and investment properties</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-12 h-12 bg-dark-gold rounded-full flex items-center justify-center">
-                                <span class="text-white font-bold">⭐</span>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-gray-900 mb-1">Client Satisfaction</h5>
-                                <p class="text-sm text-gray-600">Consistently high client satisfaction ratings</p>
-                            </div>
+                        <div class="mt-4 text-sm text-gray-500 text-center">
+                            <p>Search results powered by HAR.com | <a href="https://www.har.com" target="_blank" class="text-dark-gold hover:underline">Visit HAR.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -310,64 +664,123 @@
         </div>
     </section>
 
+    <!-- Recent Listings Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-16">Recent Sales</h2>
+            <div class="relative max-w-7xl mx-auto">
+                <div id="listingsCarousel" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Listings will be populated by JavaScript -->
+                </div>
+                <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white border border-gray-300 text-dark-gold p-3 rounded-full hover:bg-dark-gold hover:text-white hover:border-dark-gold transition shadow-lg">
+                    ‹
+                </button>
+                <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white border border-gray-300 text-dark-gold p-3 rounded-full hover:bg-dark-gold hover:text-white hover:border-dark-gold transition shadow-lg">
+                    ›
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="text-yellow-400 mb-4">★★★★★</div>
-                    <p class="text-gray-700 mb-4">"Trevor made the entire process seamless. His expertise and dedication are unmatched!"</p>
-                    <p class="font-semibold">- Sarah Johnson</p>
+    <section class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-16">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-lg">
+                    <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
+                    <p class="text-gray-700 mb-6 leading-relaxed italic">"Trevor made the entire process seamless. His expertise and dedication are unmatched!"</p>
+                    <p class="font-semibold text-sm">— Sarah Johnson</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="text-yellow-400 mb-4">★★★★★</div>
-                    <p class="text-gray-700 mb-4">"Best real estate experience we've ever had. Highly recommend HDRS Realty Co."</p>
-                    <p class="font-semibold">- Michael Chen</p>
+                <div class="bg-white p-8 rounded-lg">
+                    <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
+                    <p class="text-gray-700 mb-6 leading-relaxed italic">"Best real estate experience we've ever had. Highly recommend HDRS Realty Co."</p>
+                    <p class="font-semibold text-sm">— Michael Chen</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="text-yellow-400 mb-4">★★★★★</div>
-                    <p class="text-gray-700 mb-4">"Professional, knowledgeable, and always available. Trevor exceeded our expectations."</p>
-                    <p class="font-semibold">- Emily Rodriguez</p>
+                <div class="bg-white p-8 rounded-lg">
+                    <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
+                    <p class="text-gray-700 mb-6 leading-relaxed italic">"Professional, knowledgeable, and always available. Trevor exceeded our expectations."</p>
+                    <p class="font-semibold text-sm">— Emily Rodriguez</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Section -->
+    <section class="py-16 bg-dark-gold text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Ready to Get Started?</h2>
+                <p class="text-lg mb-8 opacity-90">Multiple ways to reach me - choose what's most convenient for you</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="tel:7134080604" class="bg-white text-dark-gold px-6 py-4 rounded-lg font-semibold hover:bg-gold hover:text-white transition flex items-center justify-center gap-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <span>(713) 408-0604</span>
+                    </a>
+                    <a href="mailto:info@hdrsrealty.com" class="bg-white text-dark-gold px-6 py-4 rounded-lg font-semibold hover:bg-gold hover:text-white transition flex items-center justify-center gap-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span>Send Email</span>
+                    </a>
+                    <a href="#contact" class="bg-white text-dark-gold px-6 py-4 rounded-lg font-semibold hover:bg-gold hover:text-white transition flex items-center justify-center gap-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                        <span>Contact Form</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Form Section -->
-    <section id="contact" class="py-20 bg-dark-gold text-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Get In Touch</h2>
+    <section id="contact" class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-4">Let's Connect</h2>
+            <p class="text-center text-gray-600 mb-12">Get in touch to begin your real estate journey</p>
             <div class="max-w-2xl mx-auto">
                 <?php if (isset($_GET['success']) && $_GET['success'] == '1'): ?>
                     <div class="bg-green-500 text-white p-4 rounded-lg mb-6 text-center">
-                        Thank you! Your message has been sent successfully. We will get back to you soon.
+                        Thank you! Your message has been received. We will get back to you soon.
                     </div>
-                <?php endif; ?>
-                <?php if (isset($_GET['error']) && $_GET['error'] == '1'): ?>
+                <?php elseif (isset($_GET['error']) && $_GET['error'] == '1'): ?>
                     <div class="bg-red-500 text-white p-4 rounded-lg mb-6 text-center">
                         There was an error sending your message. Please try again or contact us directly.
                     </div>
+                <?php else: ?>
+                    <div id="formMessage" class="hidden mb-6 text-center p-4 rounded-lg"></div>
                 <?php endif; ?>
-                <form action="assets/php/contact.php" method="POST" class="bg-white text-black p-8 rounded-lg shadow-lg">
-                    <div class="mb-6">
-                        <label for="name" class="block mb-2 font-semibold">Name *</label>
-                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold">
+                <form id="contactForm" action="assets/php/contact.php" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block mb-2 text-sm font-medium text-gray-700">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block mb-2 text-sm font-medium text-gray-700">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
+                        </div>
                     </div>
-                    <div class="mb-6">
-                        <label for="email" class="block mb-2 font-semibold">Email *</label>
-                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Email *</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
                     </div>
-                    <div class="mb-6">
-                        <label for="phone" class="block mb-2 font-semibold">Phone</label>
-                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold">
+                    <div>
+                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
                     </div>
-                    <div class="mb-6">
-                        <label for="message" class="block mb-2 font-semibold">Message *</label>
-                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold"></textarea>
+                    <div>
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-700">Message *</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-dark-gold text-white px-6 py-3 rounded-lg font-semibold hover:bg-gold transition">
-                        Send Message
+                    <div class="text-xs text-gray-500 mb-4">
+                        <p>By providing your contact information, you acknowledge and agree to our Privacy Policy and consent to receiving marketing communications.</p>
+                    </div>
+                    <button type="submit" class="w-full bg-dark-gold text-white px-8 py-4 text-sm font-medium tracking-wide hover:bg-gold transition">
+                        SUBMIT
                     </button>
                 </form>
             </div>
@@ -375,42 +788,292 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="bg-black text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                 <div>
-                    <h3 class="text-2xl font-bold mb-4">
-                        <span class="text-gold">HDRS</span> Realty Co.
+                    <h3 class="text-2xl font-serif font-bold mb-4">
+                        <span class="text-gold">HDRS</span> REALTY CO.
                     </h3>
-                    <p class="text-gray-400">Your trusted real estate partner for buying, selling, and investing.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed"><strong class="text-gold">Housing Decisions made Ridiculously Simple.</strong> HDRS Realty Co. is a full-service, luxury real estate company that has redefined the client-broker relationship. We go beyond ordinary and traditional, proving that passion, creative thinking, and the relentless pursuit of our clients' success makes us the real estate experience that will last.</p>
                 </div>
                 <div>
-                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-gold transition">Home</a></li>
-                        <li><a href="#listings" class="text-gray-400 hover:text-gold transition">Listings</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-gold transition">About</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-gold transition">Contact</a></li>
+                    <h4 class="text-sm font-medium mb-4 tracking-wide uppercase">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#hero" class="text-gray-400 hover:text-gold transition">Home</a></li>
+                        <li><a href="#search" class="text-gray-400 hover:text-gold transition">Search Homes</a></li>
+                        <li><a href="#whereWeWork" class="text-gray-400 hover:text-gold transition">Where We Work</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-gold transition">Who We Are</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-gold transition">Connect</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xl font-semibold mb-4">Contact Info</h4>
-                    <p class="text-gray-400">Trevor Hondros</p>
-                    <p class="text-gray-400">Priority One Real Estate</p>
-                    <p class="text-gray-400 mt-2">Phone: <a href="tel:7134080604" class="hover:text-gold transition">(713) 408-0604</a></p>
-                    <p class="text-gray-400">1355 E. League City Pkwy #800</p>
-                    <p class="text-gray-400">League City, TX 77573</p>
+                    <h4 class="text-sm font-medium mb-4 tracking-wide uppercase">Contact</h4>
+                    <div class="space-y-3 text-sm text-gray-400">
+                        <p class="text-white font-semibold">Trevor Hondros</p>
+                        <p>Priority One Real Estate</p>
+                        <div class="mt-4 space-y-2">
+                            <p class="flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                                <a href="tel:7134080604" class="hover:text-gold transition">(713) 408-0604</a>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <a href="mailto:info@hdrsrealty.com" class="hover:text-gold transition">info@hdrsrealty.com</a>
+                            </p>
+                            <p class="flex items-start gap-2">
+                                <svg class="w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.3.8 10.586a2 2 0 01-2.827 0l-4.244-4.243a2 2 0 010-2.827L7.414 1.586a2 2 0 012.827 0l4.243 4.243a2 2 0 010 2.827z"></path>
+                                </svg>
+                                <span>1355 E. League City Pkwy #800<br>League City, TX 77573</span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; <?php echo date('Y'); ?> HDRS Realty Co. All rights reserved.</p>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; <?php echo date('Y'); ?> HDRS Realty Co. All rights reserved. | Privacy Policy</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating Contact Button -->
+    <div id="floatingContact" class="fixed bottom-6 right-6 z-50">
+        <a href="tel:7134080604" class="bg-dark-gold text-white p-4 rounded-full shadow-2xl hover:bg-gold transition-all duration-300 flex items-center gap-3 group">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <span class="hidden md:block font-semibold">Call Now</span>
+        </a>
+    </div>
+
     <!-- JavaScript -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/search.js"></script>
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Let the form submit normally to PHP handler
+            // PHP will handle validation and redirect
+        });
+        
+        // Check for success/error messages from PHP redirect (for JavaScript fallback)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === '1' && !document.querySelector('#contact .bg-green-500')) {
+            const formMessage = document.getElementById('formMessage');
+            if (formMessage) {
+                formMessage.className = 'bg-green-500 text-white p-4 rounded-lg mb-6 text-center';
+                formMessage.textContent = 'Thank you! Your message has been received. We will get back to you soon.';
+                formMessage.classList.remove('hidden');
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        } else if (urlParams.get('error') === '1' && !document.querySelector('#contact .bg-red-500')) {
+            const formMessage = document.getElementById('formMessage');
+            if (formMessage) {
+                formMessage.className = 'bg-red-500 text-white p-4 rounded-lg mb-6 text-center';
+                formMessage.textContent = 'There was an error sending your message. Please try again or contact us directly.';
+                formMessage.classList.remove('hidden');
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // Handle sell/evaluate form submissions (JavaScript fallback)
+        if (urlParams.get('formSubmitted') === '1' && !document.querySelector('#hero .bg-green-100')) {
+            const successMessage = document.getElementById('formSuccessMessage');
+            if (successMessage) {
+                successMessage.classList.remove('hidden');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        } else if (urlParams.get('error') === '1' && urlParams.get('type') && !document.querySelector('#hero .bg-red-100')) {
+            const errorMessage = document.getElementById('formErrorMessage');
+            if (errorMessage) {
+                errorMessage.classList.remove('hidden');
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // Form display functions
+        function showSellForm() {
+            document.getElementById('sellForm').classList.remove('hidden');
+            document.getElementById('evaluateForm').classList.add('hidden');
+            document.getElementById('sellForm').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function hideSellForm() {
+            document.getElementById('sellForm').classList.add('hidden');
+        }
+
+        function showEvaluateForm() {
+            document.getElementById('evaluateForm').classList.remove('hidden');
+            document.getElementById('sellForm').classList.add('hidden');
+            document.getElementById('evaluateForm').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function hideEvaluateForm() {
+            document.getElementById('evaluateForm').classList.add('hidden');
+        }
+
+        // Toggle more cities
+        function toggleMoreCities() {
+            const moreCities = document.getElementById('moreCities');
+            const moreBtn = document.getElementById('moreCitiesBtn');
+            if (moreCities.classList.contains('hidden')) {
+                moreCities.classList.remove('hidden');
+                moreBtn.textContent = 'Show Less';
+            } else {
+                moreCities.classList.add('hidden');
+                moreBtn.textContent = 'And More';
+            }
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                event.stopImmediatePropagation();
+            }
+            
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            
+            if (!mobileMenu) {
+                console.error('Mobile menu element not found');
+                return false;
+            }
+            
+            if (!menuBtn) {
+                console.error('Mobile menu button not found');
+                return false;
+            }
+            
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                // Show menu
+                mobileMenu.classList.remove('hidden');
+                menuBtn.setAttribute('aria-expanded', 'true');
+                menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+                console.log('Mobile menu opened');
+            } else {
+                // Hide menu
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                // Close dropdown when closing menu
+                const mobileDropdown = document.getElementById('mobileDropdown');
+                if (mobileDropdown && !mobileDropdown.classList.contains('hidden')) {
+                    mobileDropdown.classList.add('hidden');
+                    const icon = document.getElementById('mobileDropdownIcon');
+                    if (icon) icon.style.transform = 'rotate(0deg)';
+                }
+                menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+                console.log('Mobile menu closed');
+            }
+            
+            return false;
+        }
+
+        // Add event listener as fallback for mobile menu button
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            if (mobileMenuBtn) {
+                // Remove inline onclick and use event listener only
+                mobileMenuBtn.removeAttribute('onclick');
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
+                    console.log('Mobile menu button clicked via event listener');
+                    toggleMobileMenu(e);
+                }, true); // Use capture phase to fire before other handlers
+            } else {
+                console.error('Mobile menu button not found on DOMContentLoaded');
+            }
+        });
+
+        // Toggle mobile dropdown
+        function toggleMobileDropdown(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            const mobileDropdown = document.getElementById('mobileDropdown');
+            const icon = document.getElementById('mobileDropdownIcon');
+            if (!mobileDropdown) {
+                console.error('Mobile dropdown element not found');
+                return;
+            }
+            
+            const isHidden = mobileDropdown.classList.contains('hidden');
+            if (isHidden) {
+                mobileDropdown.classList.remove('hidden');
+                if (icon) {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            } else {
+                mobileDropdown.classList.add('hidden');
+                if (icon) {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        }
+
+        // Add event listener as fallback for mobile dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileDropdownBtn = document.querySelector('button[onclick*="toggleMobileDropdown"]');
+            if (mobileDropdownBtn) {
+                mobileDropdownBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleMobileDropdown(e);
+                });
+            }
+        });
+
+        // Close mobile menu when clicking outside (with delay to prevent immediate closure)
+        let clickOutsideTimeout;
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const mobileDropdown = document.getElementById('mobileDropdown');
+            const mobileDropdownBtn = document.querySelector('button[onclick*="toggleMobileDropdown"]');
+            
+            // Clear any pending timeout
+            clearTimeout(clickOutsideTimeout);
+            
+            // Don't close if clicking inside the mobile menu, dropdown, or button
+            const isClickInside = 
+                (mobileMenu && mobileMenu.contains(event.target)) ||
+                (menuBtn && menuBtn.contains(event.target)) ||
+                (mobileDropdownBtn && mobileDropdownBtn.contains(event.target)) ||
+                (mobileDropdown && mobileDropdown.contains(event.target));
+            
+            if (!isClickInside && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                // Small delay to prevent immediate closure when opening
+                clickOutsideTimeout = setTimeout(function() {
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        // Close dropdown when closing menu
+                        if (mobileDropdown && !mobileDropdown.classList.contains('hidden')) {
+                            mobileDropdown.classList.add('hidden');
+                            const icon = document.getElementById('mobileDropdownIcon');
+                            if (icon) icon.style.transform = 'rotate(0deg)';
+                        }
+                        if (menuBtn) {
+                            menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+                        }
+                    }
+                }, 100);
+            }
+        });
+    </script>
 </body>
 </html>
 

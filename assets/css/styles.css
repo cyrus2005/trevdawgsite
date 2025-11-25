@@ -156,6 +156,84 @@ header {
         padding-left: 1rem;
         padding-right: 1rem;
     }
+
+    /* Hero section mobile adjustments */
+    #hero {
+        min-height: auto;
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Form inputs mobile */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    /* Mobile menu animation */
+    #mobileMenu {
+        animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Mobile dropdown */
+    #mobileDropdown {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+        opacity: 0;
+    }
+
+    #mobileDropdown:not(.hidden) {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    /* Ensure mobile dropdown button is clickable */
+    #mobileMenu button[onclick*="toggleMobileDropdown"] {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+    }
+
+    /* Ensure mobile menu button is clickable and visible */
+    #mobileMenuBtn {
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(139, 105, 20, 0.2);
+        user-select: none;
+        position: relative;
+        z-index: 100;
+        touch-action: manipulation;
+        background: transparent;
+        border: none;
+        padding: 0.5rem;
+    }
+
+    #mobileMenuBtn:active {
+        opacity: 0.7;
+    }
+
+    /* Ensure mobile menu is visible when not hidden */
+    #mobileMenu {
+        display: block !important;
+    }
+
+    #mobileMenu.hidden {
+        display: none !important;
+    }
 }
 
 /* Ensure proper spacing on mobile */
@@ -168,6 +246,28 @@ header {
     section {
         padding-top: 3rem;
         padding-bottom: 3rem;
+    }
+
+    /* Smaller text on very small screens */
+    h1 {
+        font-size: 2.5rem !important;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+    }
+
+    /* Better button spacing */
+    button, a[role="button"] {
+        min-height: 44px; /* Touch target size */
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* City grid on mobile */
+    #citiesGrid a,
+    #moreCities a {
+        padding: 1rem;
+        font-size: 0.875rem;
     }
 }
 
