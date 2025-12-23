@@ -293,11 +293,11 @@
         </div>
     </section>
 
-    <!-- Buy, Sell, Evaluate, About Us Section -->
+    <!-- Buy, Sell, Evaluate Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <!-- Buy Option -->
                     <button onclick="window.location.href='search.html'" class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-dark-gold hover:shadow-xl transition-all group text-center relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -357,28 +357,6 @@
                             <p class="text-sm text-gray-600 leading-relaxed">Get a professional property evaluation to understand your home's market value</p>
                             <div class="mt-4 flex items-center justify-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
                                 <span class="text-sm font-medium mr-2">Get Started</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </button>
-
-                    <!-- About Us Option -->
-                    <button onclick="window.location.href='#about'" class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-dark-gold hover:shadow-xl transition-all group text-center relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <div class="relative z-10">
-                            <div class="flex justify-center mb-4">
-                                <div class="w-16 h-16 rounded-full bg-dark-gold/10 flex items-center justify-center group-hover:bg-dark-gold transition-colors">
-                                    <svg class="w-8 h-8 text-dark-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h3 class="text-xl sm:text-2xl font-serif font-bold mb-2 text-gray-800 group-hover:text-dark-gold transition">About Us</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed">Learn about Trevor Hondros and our commitment to your real estate success</p>
-                            <div class="mt-4 flex items-center justify-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-sm font-medium mr-2">Learn More</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
