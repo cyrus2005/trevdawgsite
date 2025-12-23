@@ -369,7 +369,7 @@
     </section>
 
     <!-- About Trevor Hondros Section -->
-    <section id="about" class="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="about" class="py-24 bg-gradient-to-b from-gray-100 to-white">
         <div class="container mx-auto px-6">
             <div class="max-w-7xl mx-auto">
                 <!-- Header -->
@@ -469,7 +469,7 @@
     </section>
 
     <!-- Where We Work Section -->
-    <section id="whereWeWork" class="py-24 bg-gray-50">
+    <section id="whereWeWork" class="py-24 bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Where We Work</h2>
@@ -572,12 +572,12 @@
                     <p class="text-4xl font-serif font-bold mb-1">8.5%</p>
                     <p class="text-xs opacity-75">5-Year Average</p>
                 </div>
-                <div class="stat-card bg-gray-50 border-2 border-dark-gold p-6 rounded-lg">
+                <div class="stat-card bg-gray-100 border-2 border-dark-gold p-6 rounded-lg">
                     <p class="text-sm font-medium text-gray-600 mb-2">Average Home Value Increase</p>
                     <p class="text-4xl font-serif font-bold text-dark-gold mb-1">12%</p>
                     <p class="text-xs text-gray-500">This Year</p>
                 </div>
-                <div class="stat-card bg-gray-50 border-2 border-dark-gold p-6 rounded-lg">
+                <div class="stat-card bg-gray-100 border-2 border-dark-gold p-6 rounded-lg">
                     <p class="text-sm font-medium text-gray-600 mb-2">Average Equity Gain</p>
                     <p class="text-4xl font-serif font-bold text-dark-gold mb-1">$45K</p>
                     <p class="text-xs text-gray-500">Per Property</p>
@@ -600,7 +600,7 @@
     </section>
 
     <!-- Recent Listings Section -->
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-gray-100">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-16">Recent Sales</h2>
             <div class="relative max-w-7xl mx-auto">
@@ -618,7 +618,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-24 bg-gray-50">
+    <section class="py-24 bg-gray-100">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-16">What Our Clients Say</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
