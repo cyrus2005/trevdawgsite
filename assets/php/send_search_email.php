@@ -1,5 +1,8 @@
 <?php
 // Send email notification when someone searches
+// Include database configuration
+require_once __DIR__ . '/config.php';
+
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
@@ -31,7 +34,7 @@ if (!empty($criteria['propertyType']) && $criteria['propertyType'] !== 'all') {
 $criteriaText = implode("\n", $summary);
 
 // Email to agent (Trevor)
-$to = "leads@hdrsrealtyco.com";
+$to = ADMIN_EMAIL;
 $subject = "New Property Search Lead - HDRS Realty Co.";
 $message = "NEW PROPERTY SEARCH LEAD - HDRS Realty Co.\n\n";
 $message .= "═══════════════════════════════════════════\n\n";
@@ -45,12 +48,23 @@ $message .= "══════════════════════�
 $message .= "This lead has been saved and tracked in your system.\n";
 $message .= "Follow up with this potential client as soon as possible!";
 
-$headers = "From: noreply@hdrsrealty.com\r\n";
+$headers = "From: " . SITE_EMAIL . "\r\n";
 $headers .= "Reply-To: " . $email . "\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
 // Send email to agent
-$agentEmailSent = mail($to, $subject, $message, $headers);
+$agentEmailSent = @mail($to, $subject, $message, $headers);
+
+// Log email if database is available
+$db = getDBConnection();
+if ($db && $agentEmailSent) {
+    try {
+        $stmt = $db->prepare("INSERT INTO email_log (to_email, subject, email_type, status) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$to, $subject, 'search_lead', 'sent']);
+    } catch (PDOException $e) {
+        logError("Error logging email: " . $e->getMessage());
+    }
+}
 
 // Send confirmation email to user
 $userSubject = "Your Property Search - HDRS Realty Co.";
@@ -62,7 +76,17 @@ $userMessage .= "Trevor Hondros will be in touch soon with matching listings.\n\
 $userMessage .= "If you have any questions, please contact us at (713) 408-0604\n\n";
 $userMessage .= "Best regards,\nHDRS Realty Co.";
 
-$userEmailSent = mail($email, $userSubject, $userMessage, $headers);
+$userEmailSent = @mail($email, $userSubject, $userMessage, $headers);
+
+// Log user email if database is available
+if ($db && $userEmailSent) {
+    try {
+        $stmt = $db->prepare("INSERT INTO email_log (to_email, subject, email_type, status) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$email, $userSubject, 'search_confirmation', 'sent']);
+    } catch (PDOException $e) {
+        logError("Error logging email: " . $e->getMessage());
+    }
+}
 
 echo json_encode([
     'status' => 'success',

@@ -49,7 +49,7 @@
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#hero" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">HOME</a>
-                    <a href="#search" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">SEARCH HOMES</a>
+                    <a href="search.html" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">SEARCH HOMES</a>
                     <a href="#whereWeWork" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">WHERE WE WORK</a>
                     <div class="relative group">
                         <a href="#" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide flex items-center">
@@ -103,7 +103,7 @@
             <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
                 <div class="flex flex-col space-y-3 pt-4">
                     <a href="#hero" onclick="toggleMobileMenu()" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition py-2">HOME</a>
-                    <a href="#search" onclick="toggleMobileMenu()" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition py-2">SEARCH HOMES</a>
+                    <a href="search.html" onclick="toggleMobileMenu()" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition py-2">SEARCH HOMES</a>
                     <a href="#whereWeWork" onclick="toggleMobileMenu()" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition py-2">WHERE WE WORK</a>
                     
                     <!-- Mobile Dropdown for WHO WE SERVE -->
@@ -162,49 +162,106 @@
 
             <!-- Main Search Bar with Options -->
             <div class="text-center mb-12 px-4">
-                <h1 class="text-4xl sm:text-5xl md:text-7xl font-serif font-bold mb-4 text-white drop-shadow-lg">HDRS REALTY CO.</h1>
-                <p class="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 drop-shadow-md">Housing Decisions made Ridiculously Simple</p>
+                <div class="mb-8 sm:mb-10">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-3 text-white drop-shadow-lg">
+                        <span class="text-dark-gold">HDRS</span> <span class="text-white">REALTY CO.</span>
+                    </h1>
+                    <div class="w-24 h-1 bg-dark-gold mx-auto mb-4"></div>
+                    <p class="text-sm sm:text-base md:text-lg text-white/95 drop-shadow-md font-light tracking-wide uppercase">
+                        Housing Decisions made Ridiculously Simple
+                    </p>
+                </div>
                 
                 <!-- Search Bar Style Interface -->
-                <div class="bg-white/95 backdrop-blur-sm rounded-lg shadow-2xl p-4 sm:p-6 md:p-8 max-w-4xl mx-auto">
-                    <h2 class="text-xl sm:text-2xl md:text-3xl font-serif font-bold mb-6 sm:mb-8 text-gray-800">What are you looking for?</h2>
-                    
-                    <!-- Three Option Buttons styled like search options -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                <div class="bg-white/80 backdrop-blur-sm rounded-lg shadow-2xl p-6 sm:p-8 md:p-10 max-w-5xl mx-auto">
+                    <!-- Four Option Buttons styled professionally -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
                         <!-- Buy Option -->
-                        <button onclick="window.location.href='#search'" class="bg-white border-2 border-gray-300 rounded-lg p-4 sm:p-6 hover:border-dark-gold hover:shadow-lg transition-all group text-left">
-                            <div class="flex items-center justify-between mb-2 sm:mb-3">
-                                <div class="text-2xl sm:text-3xl">🏠</div>
-                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-dark-gold transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
+                        <button onclick="window.location.href='search.html'" class="bg-white border-2 border-gray-200 rounded-lg p-6 sm:p-8 hover:border-dark-gold hover:shadow-xl transition-all group text-center relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10">
+                                <div class="flex justify-center mb-4">
+                                    <div class="w-16 h-16 rounded-full bg-dark-gold/10 flex items-center justify-center group-hover:bg-dark-gold transition-colors">
+                                        <svg class="w-8 h-8 text-dark-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl sm:text-2xl font-serif font-bold mb-2 text-gray-800 group-hover:text-dark-gold transition">Buy</h3>
+                                <p class="text-sm text-gray-600 leading-relaxed">Find your perfect property with our comprehensive search tools and expert guidance</p>
+                                <div class="mt-4 flex items-center justify-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="text-sm font-medium mr-2">Get Started</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
                             </div>
-                            <h3 class="text-lg sm:text-xl font-serif font-bold mb-1 sm:mb-2 text-gray-800 group-hover:text-dark-gold transition">Buy</h3>
-                            <p class="text-xs sm:text-sm text-gray-600">Find your dream home</p>
                         </button>
 
                         <!-- Sell Option -->
-                        <button onclick="showSellForm()" class="bg-white border-2 border-gray-300 rounded-lg p-4 sm:p-6 hover:border-dark-gold hover:shadow-lg transition-all group text-left">
-                            <div class="flex items-center justify-between mb-2 sm:mb-3">
-                                <div class="text-2xl sm:text-3xl">💰</div>
-                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-dark-gold transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
+                        <button onclick="showSellForm()" class="bg-white border-2 border-gray-200 rounded-lg p-6 sm:p-8 hover:border-dark-gold hover:shadow-xl transition-all group text-center relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10">
+                                <div class="flex justify-center mb-4">
+                                    <div class="w-16 h-16 rounded-full bg-dark-gold/10 flex items-center justify-center group-hover:bg-dark-gold transition-colors">
+                                        <svg class="w-8 h-8 text-dark-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl sm:text-2xl font-serif font-bold mb-2 text-gray-800 group-hover:text-dark-gold transition">Sell</h3>
+                                <p class="text-sm text-gray-600 leading-relaxed">Maximize your property value with professional marketing and negotiation expertise</p>
+                                <div class="mt-4 flex items-center justify-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="text-sm font-medium mr-2">Get Started</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
                             </div>
-                            <h3 class="text-lg sm:text-xl font-serif font-bold mb-1 sm:mb-2 text-gray-800 group-hover:text-dark-gold transition">Sell</h3>
-                            <p class="text-xs sm:text-sm text-gray-600">Get the best value</p>
                         </button>
 
                         <!-- Evaluate Option -->
-                        <button onclick="showEvaluateForm()" class="bg-white border-2 border-gray-300 rounded-lg p-4 sm:p-6 hover:border-dark-gold hover:shadow-lg transition-all group text-left">
-                            <div class="flex items-center justify-between mb-2 sm:mb-3">
-                                <div class="text-2xl sm:text-3xl">📊</div>
-                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-dark-gold transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
+                        <button onclick="showEvaluateForm()" class="bg-white border-2 border-gray-200 rounded-lg p-6 sm:p-8 hover:border-dark-gold hover:shadow-xl transition-all group text-center relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10">
+                                <div class="flex justify-center mb-4">
+                                    <div class="w-16 h-16 rounded-full bg-dark-gold/10 flex items-center justify-center group-hover:bg-dark-gold transition-colors">
+                                        <svg class="w-8 h-8 text-dark-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl sm:text-2xl font-serif font-bold mb-2 text-gray-800 group-hover:text-dark-gold transition">Evaluate</h3>
+                                <p class="text-sm text-gray-600 leading-relaxed">Get a professional property evaluation to understand your home's market value</p>
+                                <div class="mt-4 flex items-center justify-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="text-sm font-medium mr-2">Get Started</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
                             </div>
-                            <h3 class="text-lg sm:text-xl font-serif font-bold mb-1 sm:mb-2 text-gray-800 group-hover:text-dark-gold transition">Evaluate</h3>
-                            <p class="text-xs sm:text-sm text-gray-600">Professional evaluation</p>
+                        </button>
+
+                        <!-- About Us Option -->
+                        <button onclick="window.location.href='#about'" class="bg-white border-2 border-gray-200 rounded-lg p-6 sm:p-8 hover:border-dark-gold hover:shadow-xl transition-all group text-center relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10">
+                                <div class="flex justify-center mb-4">
+                                    <div class="w-16 h-16 rounded-full bg-dark-gold/10 flex items-center justify-center group-hover:bg-dark-gold transition-colors">
+                                        <svg class="w-8 h-8 text-dark-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl sm:text-2xl font-serif font-bold mb-2 text-gray-800 group-hover:text-dark-gold transition">About Us</h3>
+                                <p class="text-sm text-gray-600 leading-relaxed">Learn about Trevor Hondros and our commitment to your real estate success</p>
+                                <div class="mt-4 flex items-center justify-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="text-sm font-medium mr-2">Learn More</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
                         </button>
                     </div>
                 </div>
@@ -285,36 +342,50 @@
     </section>
 
     <!-- About Trevor Hondros Section -->
-    <section id="about" class="py-24 bg-white">
+    <section id="about" class="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">About Trevor Hondros</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Dedicated real estate professional committed to your success</p>
-            </div>
-            
-            <div class="max-w-6xl mx-auto">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-gray-100">
-                    <div class="grid md:grid-cols-2 gap-0">
-                        <!-- Image/Profile Section -->
-                        <div class="relative h-96 md:h-auto bg-gradient-to-br from-dark-gold to-gold">
-                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/media/profile/trevor-hondros.jpg');">
-                                <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
-                            </div>
-                            <div class="relative text-center text-white p-8 h-full flex flex-col items-center justify-center">
-                                <div class="w-48 h-48 mx-auto mb-6 rounded-full bg-white/20 backdrop-blur-sm border-4 border-white/30 overflow-hidden flex items-center justify-center">
-                                    <img src="assets/media/profile/trevor-hondros.jpg" alt="Trevor Hondros" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-6xl font-serif font-bold\'>TH</div>';">
+            <div class="max-w-7xl mx-auto">
+                <!-- Header -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-serif font-bold mb-6">
+                        <span class="text-dark-gold">About</span> <span class="text-gray-900">Trevor Hondros</span>
+                    </h2>
+                    <div class="w-24 h-1 bg-dark-gold mx-auto mb-6"></div>
+                    <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-light leading-relaxed">
+                        Dedicated real estate professional committed to your success completely
+                    </p>
+                </div>
+                
+                <!-- Main Content Card -->
+                <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 mb-12">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <!-- Profile Image Section -->
+                        <div class="relative min-h-[500px] bg-gradient-to-br from-dark-gold via-gold to-dark-gold">
+                            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('assets/media/profile/trevor-hondros.jpg');"></div>
+                            <div class="relative h-full flex flex-col items-center justify-center p-12 text-center">
+                                <div class="w-64 h-64 mb-8 rounded-full bg-white/95 backdrop-blur-sm border-8 border-white shadow-2xl overflow-hidden flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                                    <img src="assets/media/profile/trevor-hondros.jpg" alt="Trevor Hondros" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-7xl font-serif font-bold text-dark-gold\'>TH</div>';">
                                 </div>
-                                <h3 class="text-3xl font-serif font-bold mb-2">Trevor Hondros</h3>
-                                <p class="text-sm opacity-90 mb-4">Real Estate Professional</p>
-                                <p class="text-sm opacity-75">Priority One Real Estate</p>
+                                <h3 class="text-4xl font-serif font-bold mb-3 text-white">Trevor Hondros</h3>
+                                <div class="w-16 h-0.5 bg-white/50 mx-auto mb-4"></div>
+                                <p class="text-lg text-white/90 mb-2 font-medium">Real Estate Professional</p>
+                                <p class="text-base text-white/75">Priority One Real Estate</p>
+                                <div class="mt-8 flex gap-4">
+                                    <a href="tel:7134080604" class="bg-white text-dark-gold px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition shadow-lg">
+                                        Call Now
+                                    </a>
+                                    <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-dark-gold transition">
+                                        Contact
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         
                         <!-- Content Section -->
-                        <div class="p-8 md:p-12">
-                            <div class="mb-8">
-                                <h4 class="text-2xl font-serif font-bold mb-4 text-dark-gold">My Story</h4>
-                                <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                        <div class="p-10 md:p-16 flex flex-col justify-center">
+                            <div class="mb-10">
+                                <h4 class="text-3xl font-serif font-bold mb-6 text-dark-gold">My Story</h4>
+                                <p class="text-lg leading-relaxed text-gray-700 mb-6">
                                     Welcome to my profile page! Thank you for visiting, I'm thrilled you're here. Real estate wasn't my initial career path, but once I got my license and began helping families realize their dream of home ownership, I found my true calling.
                                 </p>
                                 <p class="text-lg leading-relaxed text-gray-700">
@@ -322,60 +393,48 @@
                                 </p>
                             </div>
                             
-                            <div class="border-t border-gray-200 pt-8">
-                                <h4 class="text-xl font-serif font-bold mb-6 text-dark-gold">What Sets Me Apart</h4>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div class="flex items-start">
-                                        <span class="text-dark-gold mr-3 text-xl">✓</span>
+                            <div class="border-t-2 border-gray-200 pt-10">
+                                <h4 class="text-2xl font-serif font-bold mb-8 text-dark-gold">What Sets Me Apart</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div class="flex items-start group">
+                                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-dark-gold/10 flex items-center justify-center mr-4 group-hover:bg-dark-gold transition-colors">
+                                            <span class="text-dark-gold text-xl font-bold group-hover:text-white transition-colors">✓</span>
+                                        </div>
                                         <div>
-                                            <p class="font-semibold text-gray-900">Market Expertise</p>
-                                            <p class="text-sm text-gray-600">Deep knowledge of local Texas markets</p>
+                                            <p class="font-bold text-gray-900 mb-1 text-lg">Market Expertise</p>
+                                            <p class="text-sm text-gray-600 leading-relaxed">Deep knowledge of local Texas markets</p>
                                         </div>
                                     </div>
-                                    <div class="flex items-start">
-                                        <span class="text-dark-gold mr-3 text-xl">✓</span>
+                                    <div class="flex items-start group">
+                                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-dark-gold/10 flex items-center justify-center mr-4 group-hover:bg-dark-gold transition-colors">
+                                            <span class="text-dark-gold text-xl font-bold group-hover:text-white transition-colors">✓</span>
+                                        </div>
                                         <div>
-                                            <p class="font-semibold text-gray-900">Negotiation Skills</p>
-                                            <p class="text-sm text-gray-600">Proven track record of successful deals</p>
+                                            <p class="font-bold text-gray-900 mb-1 text-lg">Negotiation Skills</p>
+                                            <p class="text-sm text-gray-600 leading-relaxed">Proven track record of successful deals</p>
                                         </div>
                                     </div>
-                                    <div class="flex items-start">
-                                        <span class="text-dark-gold mr-3 text-xl">✓</span>
+                                    <div class="flex items-start group">
+                                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-dark-gold/10 flex items-center justify-center mr-4 group-hover:bg-dark-gold transition-colors">
+                                            <span class="text-dark-gold text-xl font-bold group-hover:text-white transition-colors">✓</span>
+                                        </div>
                                         <div>
-                                            <p class="font-semibold text-gray-900">Client Focus</p>
-                                            <p class="text-sm text-gray-600">Dedicated to your success</p>
+                                            <p class="font-bold text-gray-900 mb-1 text-lg">Client Focus</p>
+                                            <p class="text-sm text-gray-600 leading-relaxed">Dedicated to your success</p>
                                         </div>
                                     </div>
-                                    <div class="flex items-start">
-                                        <span class="text-dark-gold mr-3 text-xl">✓</span>
+                                    <div class="flex items-start group">
+                                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-dark-gold/10 flex items-center justify-center mr-4 group-hover:bg-dark-gold transition-colors">
+                                            <span class="text-dark-gold text-xl font-bold group-hover:text-white transition-colors">✓</span>
+                                        </div>
                                         <div>
-                                            <p class="font-semibold text-gray-900">Investment Insight</p>
-                                            <p class="text-sm text-gray-600">Specialized in investment properties</p>
+                                            <p class="font-bold text-gray-900 mb-1 text-lg">Investment Insight</p>
+                                            <p class="text-sm text-gray-600 leading-relaxed">Specialized in investment properties</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Achievements Section -->
-                <div class="mt-12 grid md:grid-cols-4 gap-6">
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 border-dark-gold">
-                        <div class="text-3xl font-serif font-bold text-dark-gold mb-2">3</div>
-                        <p class="text-sm font-medium text-gray-600">Years Experience</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 border-dark-gold">
-                        <div class="text-3xl font-serif font-bold text-dark-gold mb-2">18+</div>
-                        <p class="text-sm font-medium text-gray-600">Clients This Year</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 border-dark-gold">
-                        <div class="text-3xl font-serif font-bold text-dark-gold mb-2">$5M</div>
-                        <p class="text-sm font-medium text-gray-600">Sales Volume This Year</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 border-dark-gold">
-                        <div class="text-3xl font-serif font-bold text-dark-gold mb-2">100%</div>
-                        <p class="text-sm font-medium text-gray-600">Client Satisfaction</p>
                     </div>
                 </div>
             </div>
@@ -507,146 +566,6 @@
                     </div>
                     <div class="relative" style="height: 400px;">
                         <canvas id="homeValuesChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Home Search Section (Detailed) -->
-    <section id="search" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Search All Homes</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Find your perfect property with our comprehensive search tool</p>
-            </div>
-            
-            <div class="max-w-6xl mx-auto">
-                <!-- Search Form -->
-                <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
-                    <form id="homeSearchForm" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="city" class="block mb-2 text-sm font-medium text-gray-700">City</label>
-                                <input type="text" id="city" name="city" placeholder="e.g., Houston, League City" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
-                            </div>
-                            <div>
-                                <label for="zipCode" class="block mb-2 text-sm font-medium text-gray-700">Zip Code</label>
-                                <input type="text" id="zipCode" name="zipCode" placeholder="e.g., 77573" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
-                            </div>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="minPrice" class="block mb-2 text-sm font-medium text-gray-700">Min Price</label>
-                                <select id="minPrice" name="minPrice" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
-                                    <option value="">No Min</option>
-                                    <option value="50000">$50,000</option>
-                                    <option value="100000">$100,000</option>
-                                    <option value="150000">$150,000</option>
-                                    <option value="200000">$200,000</option>
-                                    <option value="250000">$250,000</option>
-                                    <option value="300000">$300,000</option>
-                                    <option value="400000">$400,000</option>
-                                    <option value="500000">$500,000</option>
-                                    <option value="750000">$750,000</option>
-                                    <option value="1000000">$1,000,000</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="maxPrice" class="block mb-2 text-sm font-medium text-gray-700">Max Price</label>
-                                <select id="maxPrice" name="maxPrice" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
-                                    <option value="">No Max</option>
-                                    <option value="200000">$200,000</option>
-                                    <option value="250000">$250,000</option>
-                                    <option value="300000">$300,000</option>
-                                    <option value="400000">$400,000</option>
-                                    <option value="500000">$500,000</option>
-                                    <option value="750000">$750,000</option>
-                                    <option value="1000000">$1,000,000</option>
-                                    <option value="1500000">$1,500,000</option>
-                                    <option value="2000000">$2,000,000+</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div>
-                                <label for="bedrooms" class="block mb-2 text-sm font-medium text-gray-700">Bedrooms</label>
-                                <select id="bedrooms" name="bedrooms" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
-                                    <option value="">Any</option>
-                                    <option value="1">1+</option>
-                                    <option value="2">2+</option>
-                                    <option value="3">3+</option>
-                                    <option value="4">4+</option>
-                                    <option value="5">5+</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="bathrooms" class="block mb-2 text-sm font-medium text-gray-700">Bathrooms</label>
-                                <select id="bathrooms" name="bathrooms" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
-                                    <option value="">Any</option>
-                                    <option value="1">1+</option>
-                                    <option value="2">2+</option>
-                                    <option value="2.5">2.5+</option>
-                                    <option value="3">3+</option>
-                                    <option value="4">4+</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="propertyType" class="block mb-2 text-sm font-medium text-gray-700">Property Type</label>
-                                <select id="propertyType" name="propertyType" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
-                                    <option value="all">All Types</option>
-                                    <option value="single-family">Single Family</option>
-                                    <option value="townhouse">Townhouse</option>
-                                    <option value="condo">Condo</option>
-                                    <option value="multi-family">Multi-Family</option>
-                                    <option value="land">Land</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="searchEmail" class="block mb-2 text-sm font-medium text-gray-700">Email Address *</label>
-                            <input type="email" id="searchEmail" name="email" required placeholder="your@email.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition">
-                            <p class="text-xs text-gray-500 mt-1">We'll send you matching properties and save your search</p>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-dark-gold text-white px-8 py-4 text-sm font-medium tracking-wide hover:bg-gold transition rounded-lg">
-                            SEARCH PROPERTIES
-                        </button>
-                    </form>
-                </div>
-                
-                <!-- Search Results Section -->
-                <div id="searchResults" class="hidden">
-                    <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-2xl font-serif font-bold text-dark-gold">Search Results</h3>
-                            <button onclick="document.getElementById('searchResults').classList.add('hidden')" class="text-gray-500 hover:text-dark-gold">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <p id="searchCriteriaSummary" class="text-gray-600 mb-4"></p>
-                        <div id="searchError" class="hidden"></div>
-                        <div id="searchLoading" class="hidden text-center py-8">
-                            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-dark-gold"></div>
-                            <p class="mt-4 text-gray-600">Searching properties...</p>
-                        </div>
-                        <div id="listingsContainer" class="hidden">
-                            <div id="listingsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <!-- Listings will be populated here -->
-                            </div>
-                            <div id="noResults" class="hidden text-center py-12">
-                                <p class="text-gray-600 text-lg mb-4">No properties found matching your criteria.</p>
-                                <p class="text-gray-500">Try adjusting your search filters.</p>
-                            </div>
-                        </div>
-                        <div class="mt-4 text-sm text-gray-500 text-center">
-                            <p>Search results powered by HAR.com | <a href="https://www.har.com" target="_blank" class="text-dark-gold hover:underline">Visit HAR.com</a></p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -800,7 +719,7 @@
                     <h4 class="text-sm font-medium mb-4 tracking-wide uppercase">Quick Links</h4>
                     <ul class="space-y-3 text-sm">
                         <li><a href="#hero" class="text-gray-400 hover:text-gold transition">Home</a></li>
-                        <li><a href="#search" class="text-gray-400 hover:text-gold transition">Search Homes</a></li>
+                        <li><a href="search.html" class="text-gray-400 hover:text-gold transition">Search Homes</a></li>
                         <li><a href="#whereWeWork" class="text-gray-400 hover:text-gold transition">Where We Work</a></li>
                         <li><a href="#about" class="text-gray-400 hover:text-gold transition">Who We Are</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-gold transition">Connect</a></li>
@@ -1071,3 +990,5 @@
     </script>
 </body>
 </html>
+
+

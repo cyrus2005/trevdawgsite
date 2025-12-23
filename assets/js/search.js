@@ -39,46 +39,29 @@ async function handleSearch(e) {
         return;
     }
     
-    // Show loading state
-    showLoading();
-    
     // Track search
     trackSearch(searchCriteria);
     
     // Send email notification
     sendSearchEmail(searchCriteria);
     
-    // Fetch listings from server
-    try {
-        const response = await fetch('assets/php/search_listings.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(searchCriteria)
-        });
-        
-        const data = await response.json();
-        
-        if (data.error) {
-            showSearchError(data.error);
-            hideLoading();
-            return;
-        }
-        
-        // Display results
-        displayListings(data.listings || [], searchCriteria);
-        hideLoading();
-        
-    } catch (error) {
-        console.error('Search error:', error);
-        showSearchError('Unable to fetch listings. Please try again.');
-        hideLoading();
-    }
+    // Build HAR.com search URL
+    const harUrl = buildHARSearchUrl(searchCriteria);
     
-    // Show results section
-    document.getElementById('searchResults').classList.remove('hidden');
-    document.getElementById('searchResults').scrollIntoView({ behavior: 'smooth' });
+    // Show success message
+    showSearchSuccess('Opening HAR.com search in a new window...');
+    
+    // Redirect to HAR.com with search parameters
+    // Open in new tab
+    const harWindow = window.open(harUrl, '_blank');
+    
+    // If the window was blocked or failed, try alternative approach
+    if (!harWindow || harWindow.closed || typeof harWindow.closed == 'undefined') {
+        // Fallback: redirect to main HAR.com search page
+        setTimeout(() => {
+            window.location.href = 'https://www.har.com/search';
+        }, 500);
+    }
 }
 
 function showLoading() {
@@ -166,12 +149,93 @@ function sendSearchEmail(criteria) {
     });
 }
 
+function buildHARSearchUrl(criteria) {
+    // HAR.com search base URL - using the main search page
+    let baseUrl = 'https://www.har.com/search';
+    const params = [];
+    
+    // City parameter
+    if (criteria.city) {
+        params.push(`city=${encodeURIComponent(criteria.city)}`);
+    }
+    
+    // Zip Code parameter
+    if (criteria.zipCode) {
+        params.push(`zipcode=${encodeURIComponent(criteria.zipCode)}`);
+    }
+    
+    // Price range - using price_min and price_max
+    if (criteria.minPrice) {
+        params.push(`price_min=${criteria.minPrice}`);
+    }
+    if (criteria.maxPrice) {
+        params.push(`price_max=${criteria.maxPrice}`);
+    }
+    
+    // Bedrooms - using bedrooms_min
+    if (criteria.bedrooms) {
+        params.push(`bedrooms_min=${criteria.bedrooms}`);
+    }
+    
+    // Bathrooms - using bathrooms_min
+    if (criteria.bathrooms) {
+        params.push(`bathrooms_min=${criteria.bathrooms}`);
+    }
+    
+    // Property Type mapping
+    if (criteria.propertyType && criteria.propertyType !== 'all') {
+        const propertyTypeMap = {
+            'single-family': 'single-family',
+            'townhouse': 'townhouse',
+            'condo': 'condo',
+            'multi-family': 'multi-family',
+            'land': 'land'
+        };
+        const harPropertyType = propertyTypeMap[criteria.propertyType] || criteria.propertyType;
+        params.push(`property_type=${encodeURIComponent(harPropertyType)}`);
+    }
+    
+    // Build final URL
+    if (params.length > 0) {
+        baseUrl += '?' + params.join('&');
+    }
+    
+    return baseUrl;
+}
+
 function showSearchError(message) {
     const errorDiv = document.getElementById('searchError');
     if (errorDiv) {
         errorDiv.textContent = message;
         errorDiv.className = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4';
         errorDiv.classList.remove('hidden');
+    }
+    // Hide other messages
+    const successDiv = document.getElementById('searchSuccess');
+    if (successDiv) {
+        successDiv.classList.add('hidden');
+    }
+}
+
+function showSearchSuccess(message) {
+    // Create or get success message div
+    let successDiv = document.getElementById('searchSuccess');
+    if (!successDiv) {
+        successDiv = document.createElement('div');
+        successDiv.id = 'searchSuccess';
+        const form = document.getElementById('homeSearchForm');
+        if (form && form.parentElement) {
+            form.parentElement.insertBefore(successDiv, form);
+        }
+    }
+    successDiv.textContent = message;
+    successDiv.className = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4';
+    successDiv.classList.remove('hidden');
+    
+    // Hide error message
+    const errorDiv = document.getElementById('searchError');
+    if (errorDiv) {
+        errorDiv.classList.add('hidden');
     }
 }
 

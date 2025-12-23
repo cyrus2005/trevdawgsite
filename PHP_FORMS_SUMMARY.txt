@@ -1,0 +1,102 @@
+================================================================================
+HDRS REALTY CO. - PHP FORMS UPDATE SUMMARY
+================================================================================
+
+All PHP forms have been updated to work with MySQL database on Namecheap hosting.
+
+================================================================================
+FILES UPDATED
+================================================================================
+
+1. assets/php/config.php (NEW)
+   - Centralized database configuration
+   - Contains database connection function
+   - Update this file with your Namecheap database credentials
+
+2. assets/php/contact.php (UPDATED)
+   - Now saves to contact_submissions table
+   - Still sends email notification
+   - Works even if email fails (data is saved)
+
+3. assets/php/sell_evaluate.php (UPDATED)
+   - Now saves to property_requests table
+   - Still sends email notification
+   - Works even if email fails (data is saved)
+
+4. assets/php/track_search.php (UPDATED)
+   - Now saves to property_searches table
+   - Analytics now pulled from database instead of JSON file
+   - More reliable and scalable
+
+5. assets/php/send_search_email.php (UPDATED)
+   - Uses config.php for email addresses
+   - Logs emails to email_log table
+   - Better error handling
+
+6. assets/php/database_schema.sql (NEW)
+   - SQL script to create all database tables
+   - Run this in phpMyAdmin to set up your database
+
+7. test_db.php (NEW)
+   - Test file to verify database connection
+   - DELETE THIS FILE after testing for security
+
+8. SETUP_GUIDE.txt (NEW)
+   - Complete step-by-step setup instructions
+   - Troubleshooting guide
+   - Security notes
+
+================================================================================
+DATABASE TABLES CREATED
+================================================================================
+
+1. contact_submissions
+   - Stores all contact form submissions
+   - Fields: id, first_name, last_name, name, email, phone, message, 
+            ip_address, user_agent, submitted_at
+
+2. property_requests
+   - Stores sell/evaluate form submissions
+   - Fields: id, first_name, last_name, email, phone, address, form_type,
+            ip_address, user_agent, submitted_at
+
+3. property_searches
+   - Stores property search criteria
+   - Fields: id, email, city, zip_code, min_price, max_price, bedrooms,
+            bathrooms, property_type, ip_address, user_agent, searched_at
+
+4. email_log
+   - Tracks sent emails (optional)
+   - Fields: id, to_email, subject, email_type, sent_at, status
+
+================================================================================
+WHAT YOU NEED TO DO
+================================================================================
+
+1. Create database in Namecheap cPanel
+2. Run database_schema.sql in phpMyAdmin
+3. Update assets/php/config.php with your database credentials
+4. Upload all files to your server
+5. Test forms using test_db.php
+6. Delete test_db.php after testing
+
+See SETUP_GUIDE.txt for detailed instructions.
+
+================================================================================
+FEATURES
+================================================================================
+
+✓ All forms save to MySQL database
+✓ Email notifications still work
+✓ Forms work even if email fails (graceful degradation)
+✓ All data is tracked and searchable
+✓ Analytics available from database
+✓ Secure (uses prepared statements)
+✓ Error handling included
+✓ Easy to backup (standard MySQL)
+
+================================================================================
+END OF SUMMARY
+================================================================================
+
+

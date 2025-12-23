@@ -1,0 +1,266 @@
+================================================================================
+HDRS REALTY CO. - PHP FORMS SETUP GUIDE FOR NAMECHEAP HOSTING
+================================================================================
+
+This guide will walk you through setting up all PHP forms to work with MySQL
+database on your Namecheap hosting account.
+
+================================================================================
+STEP 1: CREATE DATABASE IN NAMECHEAP CPANEL
+================================================================================
+
+1. Log into your Namecheap cPanel
+2. Find the "MySQL Databases" section (usually under "Databases")
+3. Click "MySQL Databases"
+4. Create a new database:
+   - Enter a database name (e.g., "hdrsrealty_db")
+   - Click "Create Database"
+   - Note the full database name (usually: yourusername_hdrsrealty_db)
+
+5. Create a database user:
+   - Scroll down to "MySQL Users"
+   - Enter a username (e.g., "hdrsrealty_user")
+   - Enter a strong password (use the password generator)
+   - Click "Create User"
+   - Note the full username (usually: yourusername_hdrsrealty_user)
+
+6. Add user to database:
+   - Scroll to "Add User To Database"
+   - Select your user and database
+   - Click "Add"
+   - Check "ALL PRIVILEGES"
+   - Click "Make Changes"
+
+================================================================================
+STEP 2: UPLOAD AND RUN DATABASE SCHEMA
+================================================================================
+
+1. Log into phpMyAdmin (usually in cPanel under "Databases" > "phpMyAdmin")
+2. Select your database from the left sidebar
+3. Click the "SQL" tab at the top
+4. Open the file: assets/php/database_schema.sql
+5. Copy ALL the SQL code from that file
+6. Paste it into the SQL tab in phpMyAdmin
+7. Click "Go" to execute
+8. Verify tables were created:
+   - You should see 4 tables:
+     * contact_submissions
+     * property_requests
+     * property_searches
+     * email_log
+
+================================================================================
+STEP 3: CONFIGURE DATABASE CONNECTION
+================================================================================
+
+1. Open the file: assets/php/config.php
+2. Update the following values with your actual database credentials:
+
+   define('DB_HOST', 'localhost');
+   define('DB_NAME', 'your_database_name');        // Replace with your full database name
+   define('DB_USER', 'your_database_user');        // Replace with your full database username
+   define('DB_PASS', 'your_database_password');    // Replace with your database password
+
+3. Update email addresses if needed:
+   define('ADMIN_EMAIL', 'leads@hdrsrealtyco.com');
+   define('SITE_EMAIL', 'noreply@hdrsrealtyco.com');
+
+4. Save the file
+
+IMPORTANT: Make sure config.php is uploaded to your server at:
+   assets/php/config.php
+
+================================================================================
+STEP 4: UPLOAD ALL FILES TO YOUR SERVER
+================================================================================
+
+Upload all files to your Namecheap hosting account:
+
+1. All HTML files (index.html, index.php, search.html, etc.)
+2. All PHP files in assets/php/ folder:
+   - config.php (MUST be updated with your database credentials)
+   - contact.php
+   - sell_evaluate.php
+   - track_search.php
+   - send_search_email.php
+   - search_listings.php
+   - search_analytics.php
+3. All CSS, JavaScript, images, and other assets
+
+File structure should be:
+   /
+   ├── index.html
+   ├── index.php
+   ├── search.html
+   ├── assets/
+   │   ├── php/
+   │   │   ├── config.php (UPDATED WITH YOUR CREDENTIALS)
+   │   │   ├── contact.php
+   │   │   ├── sell_evaluate.php
+   │   │   ├── track_search.php
+   │   │   ├── send_search_email.php
+   │   │   └── database_schema.sql
+   │   ├── css/
+   │   ├── js/
+   │   └── ...
+
+================================================================================
+STEP 5: SET FILE PERMISSIONS
+================================================================================
+
+In cPanel File Manager:
+1. Navigate to assets/php/ folder
+2. Right-click config.php
+3. Select "Change Permissions"
+4. Set to 644 (readable by web server, writable by owner)
+5. Click "Change Permissions"
+
+================================================================================
+STEP 6: TEST THE FORMS
+================================================================================
+
+1. Contact Form:
+   - Go to your website
+   - Navigate to the contact section
+   - Fill out and submit the form
+   - Check:
+     * You receive an email at ADMIN_EMAIL
+     * Data appears in contact_submissions table in phpMyAdmin
+
+2. Sell/Evaluate Forms:
+   - Click "Sell" or "Evaluate" on homepage
+   - Fill out and submit the form
+   - Check:
+     * You receive an email at ADMIN_EMAIL
+     * Data appears in property_requests table in phpMyAdmin
+
+3. Search Form:
+   - Go to search.html
+   - Enter search criteria and submit
+   - Check:
+     * You receive an email at ADMIN_EMAIL
+     * Data appears in property_searches table in phpMyAdmin
+
+================================================================================
+STEP 7: VERIFY DATABASE CONNECTIONS
+================================================================================
+
+To test if database connection works:
+
+1. Create a test file: test_db.php
+2. Add this code:
+
+   <?php
+   require_once 'assets/php/config.php';
+   $db = getDBConnection();
+   if ($db) {
+       echo "Database connection successful!";
+   } else {
+       echo "Database connection failed. Check config.php";
+   }
+   ?>
+
+3. Upload to your website root
+4. Visit: yourdomain.com/test_db.php
+5. If successful, delete test_db.php for security
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+PROBLEM: Forms submit but no email received
+SOLUTION:
+- Check spam folder
+- Verify email addresses in config.php are correct
+- Check if PHP mail() function is enabled on your hosting
+- Contact Namecheap support if mail() is disabled
+
+PROBLEM: Database connection errors
+SOLUTION:
+- Double-check database credentials in config.php
+- Verify database name includes full prefix (yourusername_dbname)
+- Verify username includes full prefix (yourusername_dbuser)
+- Test connection using test_db.php
+- Check if MySQL is enabled in your hosting plan
+
+PROBLEM: Forms submit but data not saving to database
+SOLUTION:
+- Verify database tables were created (check phpMyAdmin)
+- Check file permissions on config.php (should be 644)
+- Enable DEBUG_MODE in config.php temporarily to see errors
+- Check error logs in cPanel
+
+PROBLEM: "Access denied" errors
+SOLUTION:
+- Verify user has ALL PRIVILEGES on the database
+- Re-add user to database in cPanel if needed
+- Check database name and username are correct
+
+PROBLEM: Forms redirect but show errors
+SOLUTION:
+- Check that index.php exists in root directory
+- Verify all PHP files are uploaded correctly
+- Check PHP error logs in cPanel
+
+================================================================================
+SECURITY NOTES
+================================================================================
+
+1. NEVER share your config.php file publicly
+2. Keep database passwords strong and secure
+3. Regularly backup your database through phpMyAdmin
+4. Delete test_db.php after testing
+5. Set DEBUG_MODE to false in production
+6. Keep PHP files updated
+
+================================================================================
+VIEWING SUBMITTED DATA
+================================================================================
+
+To view form submissions:
+
+1. Log into phpMyAdmin
+2. Select your database
+3. Click on the table you want to view:
+   - contact_submissions (contact form data)
+   - property_requests (sell/evaluate form data)
+   - property_searches (search form data)
+   - email_log (email tracking)
+4. Click "Browse" to see all records
+
+You can also export data:
+- Select table
+- Click "Export" tab
+- Choose format (CSV, Excel, etc.)
+- Click "Go"
+
+================================================================================
+BACKUP YOUR DATABASE
+================================================================================
+
+Regular backups are important:
+
+1. In phpMyAdmin, select your database
+2. Click "Export" tab
+3. Choose "Quick" or "Custom" method
+4. Select format (SQL recommended)
+5. Click "Go" to download backup
+
+Schedule regular backups (weekly recommended)
+
+================================================================================
+SUPPORT
+================================================================================
+
+If you encounter issues:
+1. Check error logs in cPanel
+2. Enable DEBUG_MODE in config.php (temporarily)
+3. Test database connection with test_db.php
+4. Contact Namecheap support for hosting issues
+5. Verify all files are uploaded correctly
+
+================================================================================
+END OF SETUP GUIDE
+================================================================================
+
+

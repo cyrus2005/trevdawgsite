@@ -288,6 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    if (!prevBtn || !nextBtn) return; // Exit if buttons don't exist
 
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {

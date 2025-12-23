@@ -1,0 +1,76 @@
+================================================================================
+QUICK SETUP CHECKLIST - HDRS REALTY CO. PHP FORMS
+================================================================================
+
+Follow these steps in order:
+
+[ ] STEP 1: Create Database in Namecheap cPanel
+    - Go to cPanel > MySQL Databases
+    - Create database: hdrsrealty_db
+    - Create user: hdrsrealty_user
+    - Add user to database with ALL PRIVILEGES
+    - Note your FULL database name and username (includes prefix)
+
+[ ] STEP 2: Create Tables
+    - Go to phpMyAdmin
+    - Select your database
+    - Click SQL tab
+    - Copy/paste contents of: assets/php/database_schema.sql
+    - Click "Go"
+    - Verify 4 tables were created
+
+[ ] STEP 3: Configure Database
+    - Open: assets/php/config.php
+    - Update these 3 lines:
+      DB_NAME = 'your_full_database_name'
+      DB_USER = 'your_full_database_username'
+      DB_PASS = 'your_database_password'
+    - Save file
+
+[ ] STEP 4: Upload Files
+    - Upload ALL files to your server
+    - Make sure config.php is in: assets/php/config.php
+
+[ ] STEP 5: Test Connection
+    - Upload test_db.php to website root
+    - Visit: yourdomain.com/test_db.php
+    - Should show "Database connection successful!"
+    - DELETE test_db.php after testing
+
+[ ] STEP 6: Test Forms
+    - Submit contact form - check email and database
+    - Submit sell/evaluate form - check email and database
+    - Submit search form - check email and database
+
+================================================================================
+IMPORTANT FILES
+================================================================================
+
+✓ assets/php/config.php - UPDATE WITH YOUR CREDENTIALS
+✓ assets/php/database_schema.sql - Run in phpMyAdmin
+✓ SETUP_GUIDE.txt - Detailed instructions
+✓ test_db.php - Test file (DELETE after use)
+
+================================================================================
+DATABASE CREDENTIALS LOCATION
+================================================================================
+
+In Namecheap cPanel:
+1. MySQL Databases section
+2. Your database name will be: yourusername_hdrsrealty_db
+3. Your username will be: yourusername_hdrsrealty_user
+4. Copy these EXACTLY as shown (including prefix)
+
+================================================================================
+NEED HELP?
+================================================================================
+
+See SETUP_GUIDE.txt for:
+- Detailed step-by-step instructions
+- Troubleshooting section
+- Security notes
+- How to view submitted data
+
+================================================================================
+
+
