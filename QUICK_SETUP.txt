@@ -46,10 +46,10 @@ Follow these steps in order:
 IMPORTANT FILES
 ================================================================================
 
-✓ assets/php/config.php - UPDATE WITH YOUR CREDENTIALS
-✓ assets/php/database_schema.sql - Run in phpMyAdmin
-✓ SETUP_GUIDE.txt - Detailed instructions
-✓ test_db.php - Test file (DELETE after use)
+• assets/php/config.php - UPDATE WITH YOUR CREDENTIALS
+• assets/php/database_schema.sql - Run in phpMyAdmin
+• SETUP_GUIDE.txt - Detailed instructions
+• test_db.php - Test file (DELETE after use)
 
 ================================================================================
 DATABASE CREDENTIALS LOCATION

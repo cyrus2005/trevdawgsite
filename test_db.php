@@ -34,7 +34,7 @@ require_once __DIR__ . '/assets/php/config.php';
     $db = getDBConnection();
     
     if ($db) {
-        echo '<div class="success"><strong>✓ SUCCESS:</strong> Database connection established!</div>';
+        echo '<div class="success"><strong>• SUCCESS:</strong> Database connection established!</div>';
         
         // Test if tables exist
         echo '<h2>Checking Database Tables:</h2>';
@@ -53,7 +53,7 @@ require_once __DIR__ . '/assets/php/config.php';
                 
                 echo '<tr>';
                 echo '<td>' . htmlspecialchars($table) . '</td>';
-                echo '<td><span style="color: green;">✓ Exists</span></td>';
+                echo '<td><span style="color: green;">• Exists</span></td>';
                 echo '<td>' . $count . ' records</td>';
                 echo '</tr>';
             } catch (PDOException $e) {
@@ -69,7 +69,7 @@ require_once __DIR__ . '/assets/php/config.php';
         echo '</table>';
         
         if ($allTablesExist) {
-            echo '<div class="success"><strong>✓ All tables exist!</strong> Your database is set up correctly.</div>';
+            echo '<div class="success"><strong>• All tables exist!</strong> Your database is set up correctly.</div>';
         } else {
             echo '<div class="error"><strong>✗ Some tables are missing.</strong> Please run the database_schema.sql file in phpMyAdmin.</div>';
         }

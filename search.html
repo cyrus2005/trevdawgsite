@@ -343,6 +343,21 @@
     <script>
         // Set current year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Handle city parameter from URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const cityParam = urlParams.get('city');
+            
+            if (cityParam) {
+                const cityInput = document.getElementById('city');
+                if (cityInput) {
+                    cityInput.value = decodeURIComponent(cityParam);
+                    // Focus on the city input
+                    cityInput.focus();
+                }
+            }
+        });
     </script>
 </body>
 </html>
