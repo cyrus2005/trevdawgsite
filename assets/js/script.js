@@ -432,8 +432,8 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px'
     });
 
-    // Observe all stat elements
-    document.querySelectorAll('[id^="salesVolume"], [id^="clientsCount"], [id^="yearsExperience"]').forEach(stat => {
+    // Observe all stat elements (including About section stats)
+    document.querySelectorAll('[id^="salesVolume"], [id^="clientsCount"], [id^="yearsExperience"], [id^="aboutYearsExp"], [id^="aboutSalesVolume"], [id^="aboutClients"]').forEach(stat => {
         statsObserver.observe(stat);
     });
 
