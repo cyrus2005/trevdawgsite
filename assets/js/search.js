@@ -21,11 +21,33 @@ async function handleSearch(e) {
     e.preventDefault();
     
     const formData = new FormData(e.target);
+    
+    // Parse price range if provided
+    let minPrice = '';
+    let maxPrice = '';
+    const priceRange = formData.get('priceRange') || '';
+    if (priceRange) {
+        if (priceRange.includes('+')) {
+            // Handle "2000000+" format
+            minPrice = priceRange.replace('+', '');
+        } else if (priceRange.includes('-')) {
+            // Handle "200000-300000" format
+            const [min, max] = priceRange.split('-');
+            minPrice = min;
+            maxPrice = max;
+        } else if (priceRange.startsWith('0-')) {
+            // Handle "0-200000" format (Under $200,000)
+            const max = priceRange.split('-')[1];
+            maxPrice = max;
+        }
+    }
+    
     const searchCriteria = {
         city: formData.get('city') || '',
         zipCode: formData.get('zipCode') || '',
-        minPrice: formData.get('minPrice') || '',
-        maxPrice: formData.get('maxPrice') || '',
+        minPrice: minPrice,
+        maxPrice: maxPrice,
+        priceRange: priceRange,
         bedrooms: formData.get('bedrooms') || '',
         bathrooms: formData.get('bathrooms') || '',
         propertyType: formData.get('propertyType') || 'all',
@@ -33,17 +55,22 @@ async function handleSearch(e) {
         timestamp: new Date().toISOString()
     };
     
-    // Validate email
-    if (!searchCriteria.email) {
-        showSearchError('Please enter your email address to search.');
-        return;
-    }
-    
-    // Track search
+    // Track search (even without email)
     trackSearch(searchCriteria);
     
-    // Send email notification
-    sendSearchEmail(searchCriteria);
+    // Send email notification if email is provided
+    if (searchCriteria.email) {
+        sendSearchEmail(searchCriteria);
+    } else {
+        // Show email prompt after search (non-blocking)
+        const emailPrompt = document.getElementById('emailPrompt');
+        if (emailPrompt) {
+            emailPrompt.classList.remove('hidden');
+            setTimeout(() => {
+                emailPrompt.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+    }
     
     // Build HAR.com search URL
     const harUrl = buildHARSearchUrl(searchCriteria);
@@ -89,7 +116,9 @@ function displayListings(listings, criteria) {
         
         if (criteria.city) parts.push(`City: ${criteria.city}`);
         if (criteria.zipCode) parts.push(`Zip: ${criteria.zipCode}`);
-        if (criteria.minPrice || criteria.maxPrice) {
+        if (criteria.priceRange) {
+            parts.push(`Price: ${criteria.priceRange}`);
+        } else if (criteria.minPrice || criteria.maxPrice) {
             const min = criteria.minPrice ? '$' + parseInt(criteria.minPrice).toLocaleString() : '$0';
             const max = criteria.maxPrice ? '$' + parseInt(criteria.maxPrice).toLocaleString() : 'Any';
             parts.push(`Price: ${min} - ${max}`);

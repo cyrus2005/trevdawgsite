@@ -338,27 +338,92 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
 
-    // Add scroll animation
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+    // Professional scroll-triggered animations
+    const animationObserverOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -100px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const animationObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                entry.target.classList.add('animated', 'visible', 'revealed');
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, observerOptions);
+    }, animationObserverOptions);
 
-    // Observe sections for animation
-    document.querySelectorAll('section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
+    // Animate sections on scroll
+    document.querySelectorAll('section').forEach((section, index) => {
+        section.classList.add('section-fade-in');
+        animationObserver.observe(section);
+    });
+
+    // Animate cards and elements with stagger effect
+    document.querySelectorAll('.stat-card, .property-card, .animated-card').forEach((card, index) => {
+        card.classList.add('animate-on-scroll');
+        animationObserver.observe(card);
+    });
+
+    // Animate elements with fade-in-left/right
+    document.querySelectorAll('.fade-in-left, .fade-in-right').forEach(element => {
+        animationObserver.observe(element);
+    });
+
+    // Animate scale-in elements
+    document.querySelectorAll('.scale-in').forEach(element => {
+        animationObserver.observe(element);
+    });
+
+    // Add hover effects to buttons
+    document.querySelectorAll('button, a[role="button"]').forEach(button => {
+        if (!button.classList.contains('no-hover')) {
+            button.classList.add('hover-lift');
+        }
+    });
+
+    // Parallax effect for hero background
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const hero = document.getElementById('hero');
+        if (hero) {
+            const heroBackground = hero.querySelector('.absolute.inset-0');
+            if (heroBackground && scrollTop < window.innerHeight) {
+                const parallaxSpeed = 0.5;
+                heroBackground.style.transform = `translateY(${scrollTop * parallaxSpeed}px)`;
+            }
+        }
+        lastScrollTop = scrollTop;
+    }, { passive: true });
+
+    // Smooth reveal for text elements
+    const textElements = document.querySelectorAll('h1, h2, h3, p');
+    textElements.forEach((element, index) => {
+        if (!element.closest('#hero')) { // Skip hero elements (they have their own animations)
+            element.classList.add('reveal');
+            animationObserver.observe(element);
+        }
+    });
+
+    // Animate city cards with stagger
+    document.querySelectorAll('#citiesGrid a, #moreCities a').forEach((card, index) => {
+        card.classList.add('animated-card', 'animate-on-scroll');
+        animationObserver.observe(card);
+    });
+
+    // Animate testimonials
+    document.querySelectorAll('.bg-white.p-8.rounded-lg').forEach((testimonial, index) => {
+        testimonial.classList.add('animate-on-scroll', 'hover-lift');
+        animationObserver.observe(testimonial);
+    });
+
+    // Add pulse animation to CTA buttons
+    document.querySelectorAll('a[href="#contact"], button[type="submit"]').forEach(button => {
+        if (button.textContent.includes('CONTACT') || button.textContent.includes('SUBMIT')) {
+            button.classList.add('pulse-animation');
+        }
     });
 });
 
