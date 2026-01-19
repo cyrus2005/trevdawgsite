@@ -368,17 +368,17 @@
         </div>
     </section>
 
-    <!-- About Trevor Hondros - High Converting Section -->
-    <section id="about" class="py-16 md:py-24 bg-gradient-to-b from-white via-gray-50 to-white">
+    <!-- About Trevor Hondros - Clean Unified Section -->
+    <section id="about" class="py-20 md:py-28 bg-white">
         <div class="container mx-auto px-4 md:px-6 max-w-7xl">
             
-            <!-- Hero Header -->
-            <div class="text-center mb-12 md:mb-16">
-                <div class="flex items-center justify-center gap-3 mb-4">
-                    <div class="w-3 h-3 rounded-full bg-dark-gold"></div>
-                    <span class="text-sm font-semibold text-gray-700 uppercase tracking-wide">HDRS Realty Co.</span>
+            <!-- Header -->
+            <div class="text-center mb-16 md:mb-20">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <div class="w-2 h-2 rounded-full bg-dark-gold"></div>
+                    <span class="text-sm font-medium text-gray-600 uppercase tracking-wider">HDRS Realty Co.</span>
                 </div>
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     Working With an Experienced Realtor Matters
                 </h2>
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -386,211 +386,194 @@
                 </p>
             </div>
 
-            <!-- Main Content Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mb-12">
+            <!-- Main Content - Horizontal Layout -->
+            <div class="space-y-12 md:space-y-16">
                 
-                <!-- Left Column - Features & Image (Mobile: Full, Desktop: 4 cols) -->
-                <div class="lg:col-span-4 space-y-6">
-                    <!-- Competitive Rates Card -->
-                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border-l-4 border-dark-gold">
-                        <div class="flex items-start gap-4">
-                            <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-dark-gold to-gold rounded-xl flex items-center justify-center shadow-md">
-                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                                </svg>
+                <!-- Top Row: Profile & Stats -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Trevor Profile -->
+                    <div class="bg-gray-50 rounded-lg p-8 md:p-10">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-6 mb-6">
+                            <div class="flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden bg-white shadow-md">
+                                <img src="assets/media/profile/trevor-hondros.jpg" alt="Trevor Hondros" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-3xl font-serif font-bold text-dark-gold flex items-center justify-center h-full\'>TH</div>';">
                             </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Competitive Rates</h3>
-                                <p class="text-gray-600 leading-relaxed">Smart pricing backed by proven results and value. Get the best deal with Trevor's expert negotiation skills.</p>
+                            <div class="flex-1 text-center md:text-left">
+                                <h3 class="text-3xl font-bold text-gray-900 mb-2">Trevor Hondros</h3>
+                                <p class="text-gray-600 mb-1">Real Estate Professional</p>
+                                <p class="text-sm text-gray-500">Priority One Real Estate</p>
                             </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="tel:7134080604" class="flex-1 bg-dark-gold text-white px-6 py-3 rounded-lg font-semibold hover:bg-gold transition text-center">
+                                Call (713) 408-0604
+                            </a>
+                            <a href="#contact" class="flex-1 border-2 border-dark-gold text-dark-gold px-6 py-3 rounded-lg font-semibold hover:bg-dark-gold hover:text-white transition text-center">
+                                Get Started
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Absolute Support Card -->
-                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border-l-4 border-dark-gold">
-                        <div class="flex items-start gap-4">
-                            <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-dark-gold to-gold rounded-xl flex items-center justify-center shadow-md">
-                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                                </svg>
+                    <!-- Statistics -->
+                    <div class="bg-gray-50 rounded-lg p-8 md:p-10">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Proven Results</h3>
+                        <div class="grid grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="text-4xl md:text-5xl font-bold text-dark-gold mb-2" id="aboutYearsExp" data-target="3" data-suffix="+">0+</div>
+                                <div class="text-xs md:text-sm font-medium text-gray-600 uppercase tracking-wide">Years Experience</div>
                             </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Absolute Support</h3>
-                                <p class="text-gray-600 leading-relaxed">Guidance you can rely on through every step. From search to closing, Trevor is with you.</p>
+                            <div class="text-center border-l border-r border-gray-300">
+                                <div class="text-4xl md:text-5xl font-bold text-dark-gold mb-2" id="aboutSalesVolume" data-target="5" data-suffix="M" data-prefix="$">$0M</div>
+                                <div class="text-xs md:text-sm font-medium text-gray-600 uppercase tracking-wide">Sales Volume</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl md:text-5xl font-bold text-dark-gold mb-2" id="aboutClients" data-target="18" data-suffix="+">0+</div>
+                                <div class="text-xs md:text-sm font-medium text-gray-600 uppercase tracking-wide">Satisfied Clients</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Middle Row: Features -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Competitive Rates -->
+                    <div class="bg-gray-50 rounded-lg p-6 md:p-8">
+                        <div class="w-12 h-12 bg-dark-gold rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Competitive Rates</h3>
+                        <p class="text-gray-600 leading-relaxed">Smart pricing backed by proven results and value. Get the best deal with Trevor's expert negotiation skills.</p>
+                    </div>
+
+                    <!-- Absolute Support -->
+                    <div class="bg-gray-50 rounded-lg p-6 md:p-8">
+                        <div class="w-12 h-12 bg-dark-gold rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Absolute Support</h3>
+                        <p class="text-gray-600 leading-relaxed">Guidance you can rely on through every step. From search to closing, Trevor is with you.</p>
                     </div>
 
                     <!-- Property Image -->
-                    <div class="bg-white rounded-xl overflow-hidden shadow-lg">
-                        <img src="assets/media/properties/hero-background.jpg" alt="Modern Houston homes" class="w-full h-64 md:h-80 object-cover" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
+                    <div class="bg-gray-50 rounded-lg overflow-hidden">
+                        <img src="assets/media/properties/hero-background.jpg" alt="Modern Houston homes" class="w-full h-full min-h-[300px] object-cover" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';">
                     </div>
                 </div>
 
-                <!-- Middle Column - Main Content (Mobile: Full, Desktop: 5 cols) -->
-                <div class="lg:col-span-5 space-y-6">
-                    <!-- Trevor Profile Card - Prominent -->
-                    <div class="bg-gradient-to-br from-dark-gold to-gold rounded-2xl p-6 md:p-8 shadow-2xl text-white">
-                        <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-                            <div class="flex-shrink-0 w-32 h-32 rounded-2xl overflow-hidden bg-white/20 backdrop-blur-sm border-4 border-white/30 shadow-xl">
-                                <img src="assets/media/profile/trevor-hondros.jpg" alt="Trevor Hondros" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-4xl font-serif font-bold text-white flex items-center justify-center h-full\'>TH</div>';">
-                            </div>
-                            <div class="flex-1 text-center md:text-left">
-                                <h3 class="text-3xl md:text-4xl font-bold mb-2">Trevor Hondros</h3>
-                                <p class="text-lg text-white/90 mb-1 font-medium">Real Estate Professional</p>
-                                <p class="text-sm text-white/75">Priority One Real Estate</p>
-                                <div class="mt-4 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                                    <a href="tel:7134080604" class="bg-white text-dark-gold px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition shadow-lg text-center">
-                                        📞 Call Now
-                                    </a>
-                                    <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-dark-gold transition text-center">
-                                        Get Started
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                <!-- Bottom Row: Content & Story -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Main Description -->
-                    <div class="bg-white rounded-xl p-6 md:p-8 shadow-lg">
-                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Choose Trevor?</h3>
-                        <div class="text-gray-700 leading-relaxed space-y-4">
-                            <p>
-                                HDRS Realty Co. is a top Houston real estate company recognized for excellence in buying, selling, and investing. With over <strong class="text-dark-gold">$5 million in sales volume this year</strong> and <strong class="text-dark-gold">18+ satisfied clients</strong>, we've guided numerous families through successful transactions across the Greater Houston area.
-                            </p>
-                            <p>
-                                Combining deep local market expertise, clear communication, and a service-first mindset, Trevor helps buyers find the right home, sellers maximize value, and investors grow their portfolios.
-                            </p>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Trevor?</h3>
+                            <div class="text-gray-700 leading-relaxed space-y-4">
+                                <p>
+                                    HDRS Realty Co. is a top Houston real estate company recognized for excellence in buying, selling, and investing. With over <strong>$5 million in sales volume this year</strong> and <strong>18+ satisfied clients</strong>, we've guided numerous families through successful transactions across the Greater Houston area.
+                                </p>
+                                <p>
+                                    Combining deep local market expertise, clear communication, and a service-first mindset, Trevor helps buyers find the right home, sellers maximize value, and investors grow their portfolios.
+                                </p>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- My Story Section -->
-                    <div class="bg-white rounded-xl p-6 md:p-8 shadow-lg">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-3 h-3 rounded-full bg-dark-gold"></div>
-                            <span class="text-sm font-semibold text-gray-700 uppercase tracking-wide">My Story</span>
-                        </div>
-                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                            Real Estate Wasn't My Initial Career Path
-                        </h3>
-                        <div class="text-gray-700 leading-relaxed space-y-3">
-                            <p>
-                                Welcome! Real estate wasn't my initial career path, but once I got my license and began helping families realize their dream of home ownership, <strong>I found my true calling</strong>.
-                            </p>
-                            <p>
-                                My dedication and motivation are boundless. I bring a strong work ethic and extensive experience to every client interaction. I'm confident I can help you achieve your real estate goals, whether you're buying or selling.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column - Stats & CTA (Mobile: Full, Desktop: 3 cols) -->
-                <div class="lg:col-span-3 space-y-6">
-                    <!-- Statistics Card -->
-                    <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 md:p-8 shadow-2xl text-white">
-                        <h3 class="text-xl font-bold mb-6 text-center">Proven Results</h3>
-                        <div class="space-y-6">
-                            <div class="text-center border-b border-white/20 pb-6">
-                                <div class="text-5xl md:text-6xl font-bold text-dark-gold mb-2" id="aboutYearsExp" data-target="3" data-suffix="+">0+</div>
-                                <div class="text-sm font-medium text-white/80 uppercase tracking-wide">Years of Experience</div>
-                            </div>
-                            <div class="text-center border-b border-white/20 pb-6">
-                                <div class="text-5xl md:text-6xl font-bold text-dark-gold mb-2" id="aboutSalesVolume" data-target="5" data-suffix="M" data-prefix="$">$0M</div>
-                                <div class="text-sm font-medium text-white/80 uppercase tracking-wide">Sales Volume This Year</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-5xl md:text-6xl font-bold text-dark-gold mb-2" id="aboutClients" data-target="18" data-suffix="+">0+</div>
-                                <div class="text-sm font-medium text-white/80 uppercase tracking-wide">Satisfied Clients</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Key Points Card -->
-                    <div class="bg-white rounded-xl p-6 shadow-lg">
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">What Sets Me Apart</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3">
-                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark-gold/10 flex items-center justify-center mt-1">
-                                    <svg class="w-5 h-5 text-dark-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
+                        <!-- Key Points -->
+                        <div class="pt-6 border-t border-gray-200">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">What Sets Me Apart</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark-gold/10 flex items-center justify-center mt-1">
+                                        <svg class="w-4 h-4 text-dark-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-900 mb-1">Found My Calling</h5>
+                                        <p class="text-sm text-gray-600">Helping families achieve homeownership</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 mb-1">Found My Calling</h4>
-                                    <p class="text-sm text-gray-600">Helping families achieve homeownership</p>
+                                <div class="flex items-start gap-3">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark-gold/10 flex items-center justify-center mt-1">
+                                        <svg class="w-4 h-4 text-dark-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-900 mb-1">Strong Work Ethic</h5>
+                                        <p class="text-sm text-gray-600">Dedicated to every client interaction</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark-gold/10 flex items-center justify-center mt-1">
-                                    <svg class="w-5 h-5 text-dark-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
+                                <div class="flex items-start gap-3">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark-gold/10 flex items-center justify-center mt-1">
+                                        <svg class="w-4 h-4 text-dark-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-900 mb-1">Proven Results</h5>
+                                        <p class="text-sm text-gray-600">$5M in sales volume this year</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 mb-1">Strong Work Ethic</h4>
-                                    <p class="text-sm text-gray-600">Dedicated to every client interaction</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark-gold/10 flex items-center justify-center mt-1">
-                                    <svg class="w-5 h-5 text-dark-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 mb-1">Proven Results</h4>
-                                    <p class="text-sm text-gray-600">$5M in sales volume this year</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-dark-gold/10 flex items-center justify-center mt-1">
-                                    <svg class="w-5 h-5 text-dark-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 mb-1">Client Focused</h4>
-                                    <p class="text-sm text-gray-600">18+ satisfied clients and counting</p>
+                                <div class="flex items-start gap-3">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark-gold/10 flex items-center justify-center mt-1">
+                                        <svg class="w-4 h-4 text-dark-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-gray-900 mb-1">Client Focused</h5>
+                                        <p class="text-sm text-gray-600">18+ satisfied clients and counting</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Primary CTA -->
-                    <div class="bg-gradient-to-br from-dark-gold to-gold rounded-xl p-6 md:p-8 shadow-2xl text-white text-center">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-3">
-                            Creating Spaces That Inspire
-                        </h3>
-                        <p class="text-white/90 mb-6 text-lg">
-                            Homes that uplift people and strengthen communities.
-                        </p>
-                        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-white text-dark-gold px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition shadow-xl w-full">
-                            Let's Work Together
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
-                        </a>
+                    <!-- My Story -->
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-2 h-2 rounded-full bg-dark-gold"></div>
+                                <span class="text-sm font-medium text-gray-600 uppercase tracking-wide">My Story</span>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                                Real Estate Wasn't My Initial Career Path
+                            </h3>
+                            <div class="text-gray-700 leading-relaxed space-y-4">
+                                <p>
+                                    Welcome! Real estate wasn't my initial career path, but once I got my license and began helping families realize their dream of home ownership, <strong>I found my true calling</strong>.
+                                </p>
+                                <p>
+                                    My dedication and motivation are boundless. I bring a strong work ethic and extensive experience to every client interaction. I'm confident I can help you achieve your real estate goals, whether you're buying or selling.
+                                </p>
+                                <p>
+                                    Let's work together to make your dreams a reality. With <strong>$5 million in sales volume this year</strong> and <strong>18+ satisfied clients</strong>, I've proven that passion, hard work, and a commitment to excellence make all the difference in real estate.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Bottom CTA Bar -->
-            <div class="bg-dark-gold rounded-2xl p-6 md:p-8 shadow-2xl text-white text-center">
-                <h3 class="text-2xl md:text-3xl font-bold mb-3">Ready to Make Your Real Estate Dreams a Reality?</h3>
-                <p class="text-lg text-white/90 mb-6 max-w-2xl mx-auto">
+            <!-- Bottom CTA -->
+            <div class="mt-16 md:mt-20 bg-gray-50 rounded-lg p-8 md:p-12 text-center">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to Make Your Real Estate Dreams a Reality?</h3>
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
                     Join 18+ satisfied clients who trusted Trevor to guide them through successful real estate transactions
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="tel:7134080604" class="bg-white text-dark-gold px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition shadow-xl inline-flex items-center gap-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="tel:7134080604" class="bg-dark-gold text-white px-8 py-4 rounded-lg font-semibold hover:bg-gold transition inline-flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                         </svg>
                         Call (713) 408-0604
                     </a>
-                    <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-dark-gold transition inline-flex items-center gap-2">
+                    <a href="#contact" class="border-2 border-dark-gold text-dark-gold px-8 py-4 rounded-lg font-semibold hover:bg-dark-gold hover:text-white transition inline-flex items-center gap-2">
                         Get Free Consultation
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                         </svg>
                     </a>
