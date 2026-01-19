@@ -497,19 +497,7 @@ section {
     transform: translateY(0);
 }
 
-/* Button pulse animation */
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 0 0 0 rgba(139, 105, 20, 0.7);
-    }
-    50% {
-        box-shadow: 0 0 0 10px rgba(139, 105, 20, 0);
-    }
-}
-
-.pulse-animation {
-    animation: pulse 2s infinite;
-}
+/* Button pulse animation removed per user request */
 
 /* Shimmer effect for premium elements */
 @keyframes shimmer {

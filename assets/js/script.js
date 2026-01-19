@@ -383,20 +383,59 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Parallax effect for hero background
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const hero = document.getElementById('hero');
-        if (hero) {
-            const heroBackground = hero.querySelector('.absolute.inset-0');
-            if (heroBackground && scrollTop < window.innerHeight) {
-                const parallaxSpeed = 0.5;
-                heroBackground.style.transform = `translateY(${scrollTop * parallaxSpeed}px)`;
+    // Parallax effect removed per user request
+
+    // Number counting animation for statistics
+    function animateCounter(element, target, duration = 2000) {
+        const prefix = element.getAttribute('data-prefix') || '';
+        const suffix = element.getAttribute('data-suffix') || '';
+        const start = 0;
+        const increment = target / (duration / 16); // 60fps
+        let current = start;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
             }
-        }
-        lastScrollTop = scrollTop;
-    }, { passive: true });
+            
+            // Format the number
+            let displayValue;
+            if (target >= 1000) {
+                displayValue = (current / 1000).toFixed(1);
+                if (displayValue.endsWith('.0')) {
+                    displayValue = displayValue.replace('.0', '');
+                }
+            } else {
+                displayValue = Math.floor(current);
+            }
+            
+            element.textContent = prefix + displayValue + suffix;
+        }, 16);
+    }
+
+    // Observe stats sections and trigger counting animation
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                const target = parseFloat(element.getAttribute('data-target'));
+                if (target && !element.classList.contains('counted')) {
+                    element.classList.add('counted');
+                    animateCounter(element, target);
+                }
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '0px'
+    });
+
+    // Observe all stat elements
+    document.querySelectorAll('[id^="salesVolume"], [id^="clientsCount"], [id^="yearsExperience"]').forEach(stat => {
+        statsObserver.observe(stat);
+    });
 
     // Smooth reveal for text elements
     const textElements = document.querySelectorAll('h1, h2, h3, p');
@@ -419,11 +458,6 @@ document.addEventListener('DOMContentLoaded', function() {
         animationObserver.observe(testimonial);
     });
 
-    // Add pulse animation to CTA buttons
-    document.querySelectorAll('a[href="#contact"], button[type="submit"]').forEach(button => {
-        if (button.textContent.includes('CONTACT') || button.textContent.includes('SUBMIT')) {
-            button.classList.add('pulse-animation');
-        }
-    });
+    // Pulse animation removed per user request
 });
 
