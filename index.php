@@ -707,30 +707,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-24 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-16">What Our Clients Say</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-white p-8 rounded-lg">
-                    <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
-                    <p class="text-gray-700 mb-6 leading-relaxed italic">"Trevor made the entire process seamless. His expertise and dedication are unmatched!"</p>
-                    <p class="font-semibold text-sm">— Sarah Johnson</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg">
-                    <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
-                    <p class="text-gray-700 mb-6 leading-relaxed italic">"Best real estate experience we've ever had. Highly recommend HDRS Realty Co."</p>
-                    <p class="font-semibold text-sm">— Michael Chen</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg">
-                    <div class="text-yellow-400 mb-4 text-xl">★★★★★</div>
-                    <p class="text-gray-700 mb-6 leading-relaxed italic">"Professional, knowledgeable, and always available. Trevor exceeded our expectations."</p>
-                    <p class="font-semibold text-sm">— Emily Rodriguez</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Quick Contact Section -->
     <section class="py-16 bg-dark-gold text-white">
         <div class="container mx-auto px-6">
