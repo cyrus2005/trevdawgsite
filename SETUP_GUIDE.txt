@@ -62,7 +62,7 @@ STEP 3: CONFIGURE DATABASE CONNECTION
    define('DB_PASS', 'your_database_password');    // Replace with your database password
 
 3. Update email addresses if needed:
-   define('ADMIN_EMAIL', 'leads@hdrsrealtyco.com');
+   define('ADMIN_EMAIL', 'connect@hdrsrealtyco.com');
    define('SITE_EMAIL', 'noreply@hdrsrealtyco.com');
 
 4. Save the file

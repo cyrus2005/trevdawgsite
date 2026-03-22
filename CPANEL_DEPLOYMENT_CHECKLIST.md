@@ -4,7 +4,7 @@
 
 ### ✅ Files Ready
 - [ ] All files organized in folder structure
-- [ ] All email addresses updated to `leads@hdrsrealtyco.com`
+- [ ] All email addresses updated to `connect@hdrsrealtyco.com`
 - [ ] All file paths verified
 - [ ] All forms tested locally (if possible)
 
@@ -79,16 +79,16 @@
 
 1. [ ] Verify email account exists:
    - Go to **Email Accounts** in cPanel
-   - Ensure `leads@hdrsrealtyco.com` email account exists
+   - Ensure `connect@hdrsrealtyco.com` email account exists
    - If not, create it:
      - Click **Create**
-     - Email: `leads`
+     - Email: `connect`
      - Domain: `hdrsrealtyco.com` (or your domain)
      - Set password
      - Click **Create Account**
 
 2. [ ] Test email functionality:
-   - Send a test email to `leads@hdrsrealtyco.com`
+   - Send a test email to `connect@hdrsrealtyco.com`
    - Check if emails are being received
 
 3. [ ] Configure email routing (if needed):
@@ -117,7 +117,7 @@
    - Phone: (optional)
    - Message: Test message
 3. [ ] Submit form
-4. [ ] Check email inbox `leads@hdrsrealtyco.com`:
+4. [ ] Check email inbox `connect@hdrsrealtyco.com`:
    - [ ] Email received with form submission
    - [ ] All information included correctly
 5. [ ] Verify success message appears on page
@@ -129,7 +129,7 @@
    - Email: your-test-email@example.com
    - Other criteria (optional)
 3. [ ] Submit search
-4. [ ] Check email inbox `leads@hdrsrealtyco.com`:
+4. [ ] Check email inbox `connect@hdrsrealtyco.com`:
    - [ ] Email received with search criteria
    - [ ] All search information included
 5. [ ] Verify search results display (or HAR.com link works)
@@ -261,8 +261,8 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ## Post-Deployment Checklist
 
 - [ ] All pages load correctly
-- [ ] Contact form sends emails to leads@hdrsrealtyco.com
-- [ ] Search form sends emails to leads@hdrsrealtyco.com
+- [ ] Contact form sends emails to connect@hdrsrealtyco.com
+- [ ] Search form sends emails to connect@hdrsrealtyco.com
 - [ ] All city pages accessible
 - [ ] All links work
 - [ ] Mobile responsive
@@ -312,6 +312,6 @@ public_html/
 ---
 
 **Last Updated**: Ready for cPanel deployment
-**Email Destination**: leads@hdrsrealtyco.com
+**Email Destination**: connect@hdrsrealtyco.com
 **PHP Version Required**: 7.4+
 
