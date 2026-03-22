@@ -40,22 +40,22 @@
     
     <!-- Header -->
     <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-gray-100">
-        <nav class="container mx-auto px-4 md:px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-lg md:text-xl font-serif font-bold tracking-tight">
+        <nav class="container mx-auto px-4 md:px-6 py-3 md:py-3">
+            <div class="flex flex-nowrap items-center justify-between gap-3">
+                <div class="text-base md:text-lg font-serif font-bold tracking-tight shrink-0">
                     <span class="text-dark-gold">HDRS</span> <span class="text-black">REALTY CO.</span>
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#hero" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">HOME</a>
-                    <a href="search.html" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">SEARCH HOMES</a>
-                    <a href="blog.html" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">BLOG</a>
-                    <a href="#whereWeWork" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">WHERE WE WORK</a>
-                    <div class="relative group">
-                        <a href="#" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide flex items-center">
+                <div class="hidden md:flex flex-nowrap items-center gap-x-2 lg:gap-x-3 xl:gap-x-4 min-w-0">
+                    <a href="#hero" class="text-xs font-medium text-gray-700 hover:text-dark-gold transition tracking-wide whitespace-nowrap">HOME</a>
+                    <a href="search.html" class="text-xs font-medium text-gray-700 hover:text-dark-gold transition tracking-wide whitespace-nowrap">SEARCH HOMES</a>
+                    <a href="blog.html" class="text-xs font-medium text-gray-700 hover:text-dark-gold transition tracking-wide whitespace-nowrap">BLOG</a>
+                    <a href="#whereWeWork" class="text-xs font-medium text-gray-700 hover:text-dark-gold transition tracking-wide whitespace-nowrap">WHERE WE WORK</a>
+                    <div class="relative group shrink-0">
+                        <a href="#" class="text-xs font-medium text-gray-700 hover:text-dark-gold transition tracking-wide flex items-center whitespace-nowrap">
                             WHO WE SERVE
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-3 h-3 ml-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
@@ -78,16 +78,16 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#about" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">WHO WE ARE</a>
-                    <a href="#contact" class="text-sm font-medium text-gray-700 hover:text-dark-gold transition tracking-wide">CONNECT</a>
+                    <a href="#about" class="text-xs font-medium text-gray-700 hover:text-dark-gold transition tracking-wide whitespace-nowrap">WHO WE ARE</a>
+                    <a href="#contact" class="text-xs font-medium text-gray-700 hover:text-dark-gold transition tracking-wide whitespace-nowrap">CONNECT</a>
                 </div>
                 
                 <!-- Desktop Contact -->
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="tel:7134080604" class="text-sm font-medium text-dark-gold hover:text-gold transition">
+                <div class="hidden md:flex flex-nowrap items-center gap-2 lg:gap-3 shrink-0">
+                    <a href="tel:7134080604" class="text-xs font-medium text-dark-gold hover:text-gold transition whitespace-nowrap">
                         (713) 408-0604
                     </a>
-                    <a href="#contact" class="text-sm font-medium text-dark-gold border border-dark-gold px-4 md:px-6 py-2 hover:bg-dark-gold hover:text-white transition tracking-wide">
+                    <a href="#contact" class="text-xs font-medium text-dark-gold border border-dark-gold px-3 py-1.5 hover:bg-dark-gold hover:text-white transition tracking-wide whitespace-nowrap">
                         CONTACT
                     </a>
                 </div>
