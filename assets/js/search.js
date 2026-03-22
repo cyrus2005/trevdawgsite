@@ -51,6 +51,7 @@ async function handleSearch(e) {
         bedrooms: formData.get('bedrooms') || '',
         bathrooms: formData.get('bathrooms') || '',
         propertyType: formData.get('propertyType') || 'all',
+        listingType: formData.get('listingType') || 'sale',
         email: formData.get('email') || '',
         timestamp: new Date().toISOString()
     };
@@ -179,8 +180,9 @@ function sendSearchEmail(criteria) {
 }
 
 function buildHARSearchUrl(criteria) {
-    // HAR.com search base URL - using the main search page
-    let baseUrl = 'https://www.har.com/search';
+    // HAR.com: for-sale vs for-rent use different entry points
+    const isRent = criteria.listingType === 'rent';
+    let baseUrl = isRent ? 'https://www.har.com/for-rent' : 'https://www.har.com/search';
     const params = [];
     
     // City parameter

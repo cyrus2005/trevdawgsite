@@ -362,72 +362,89 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <!-- Buy Option -->
-                    <button onclick="window.location.href='search.html'" class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-dark-gold hover:shadow-xl transition-all group text-center relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <div class="relative z-10">
-                            <div class="flex justify-center mb-4">
-                                <div class="w-16 h-16 rounded-full bg-dark-gold/10 flex items-center justify-center group-hover:bg-dark-gold transition-colors">
-                                    <svg class="w-8 h-8 text-dark-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h3 class="text-xl sm:text-2xl font-serif font-bold mb-2 text-gray-800 group-hover:text-dark-gold transition">Buy</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed">Find your perfect property with our comprehensive search tools and expert guidance</p>
-                            <div class="mt-4 flex items-center justify-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-sm font-medium mr-2">Get Started</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                <div id="actionUnderConstructionMsg" class="hidden mb-6 rounded-lg border-2 border-amber-200 bg-amber-50 px-4 py-4 text-amber-900 shadow-sm" role="alert">
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+                        <p class="font-serif font-semibold text-lg">Sorry — Under Construction</p>
+                        <button type="button" onclick="document.getElementById('actionUnderConstructionMsg').classList.add('hidden')" class="text-sm text-amber-800/90 hover:text-amber-950 underline underline-offset-2">Dismiss</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+                    <!-- Buy, Sell, Evaluate — stacked vertically -->
+                    <div class="flex flex-col gap-4">
+                        <button type="button" onclick="showUnderConstruction()" class="bg-white border-2 border-gray-200 rounded-lg p-5 sm:p-6 hover:border-dark-gold hover:shadow-xl transition-all group text-left relative overflow-hidden flex flex-row items-center gap-5 sm:gap-6 w-full">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10 flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-dark-gold/10 flex items-center justify-center group-hover:bg-dark-gold transition-colors">
+                                <svg class="w-7 h-7 sm:w-8 sm:h-8 text-dark-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                                 </svg>
                             </div>
-                        </div>
-                    </button>
+                            <div class="relative z-10 flex-1 min-w-0">
+                                <h3 class="text-xl sm:text-2xl font-serif font-bold mb-1 text-gray-800 group-hover:text-dark-gold transition">Buy</h3>
+                                <p class="text-sm text-gray-600 leading-relaxed">Find your perfect property with our comprehensive search tools and expert guidance</p>
+                                <div class="mt-2 flex items-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="text-sm font-medium mr-2">Get Started</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                </div>
+                            </div>
+                        </button>
 
-                    <!-- Sell Option -->
-                    <button onclick="showSellForm()" class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-dark-gold hover:shadow-xl transition-all group text-center relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <div class="relative z-10">
-                            <div class="flex justify-center mb-4">
-                                <div class="w-16 h-16 rounded-full bg-dark-gold/10 flex items-center justify-center group-hover:bg-dark-gold transition-colors">
-                                    <svg class="w-8 h-8 text-dark-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h3 class="text-xl sm:text-2xl font-serif font-bold mb-2 text-gray-800 group-hover:text-dark-gold transition">Sell</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed">Maximize your property value with professional marketing and negotiation expertise</p>
-                            <div class="mt-4 flex items-center justify-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-sm font-medium mr-2">Get Started</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        <button type="button" onclick="showUnderConstruction()" class="bg-white border-2 border-gray-200 rounded-lg p-5 sm:p-6 hover:border-dark-gold hover:shadow-xl transition-all group text-left relative overflow-hidden flex flex-row items-center gap-5 sm:gap-6 w-full">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10 flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-dark-gold/10 flex items-center justify-center group-hover:bg-dark-gold transition-colors">
+                                <svg class="w-7 h-7 sm:w-8 sm:h-8 text-dark-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
-                        </div>
-                    </button>
+                            <div class="relative z-10 flex-1 min-w-0">
+                                <h3 class="text-xl sm:text-2xl font-serif font-bold mb-1 text-gray-800 group-hover:text-dark-gold transition">Sell</h3>
+                                <p class="text-sm text-gray-600 leading-relaxed">Maximize your property value with professional marketing and negotiation expertise</p>
+                                <div class="mt-2 flex items-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="text-sm font-medium mr-2">Get Started</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                </div>
+                            </div>
+                        </button>
 
-                    <!-- Evaluate Option -->
-                    <button onclick="showEvaluateForm()" class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-dark-gold hover:shadow-xl transition-all group text-center relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <div class="relative z-10">
-                            <div class="flex justify-center mb-4">
-                                <div class="w-16 h-16 rounded-full bg-dark-gold/10 flex items-center justify-center group-hover:bg-dark-gold transition-colors">
-                                    <svg class="w-8 h-8 text-dark-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h3 class="text-xl sm:text-2xl font-serif font-bold mb-2 text-gray-800 group-hover:text-dark-gold transition">Evaluate</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed">Get a professional property evaluation to understand your home's market value</p>
-                            <div class="mt-4 flex items-center justify-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="text-sm font-medium mr-2">Get Started</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        <button type="button" onclick="showUnderConstruction()" class="bg-white border-2 border-gray-200 rounded-lg p-5 sm:p-6 hover:border-dark-gold hover:shadow-xl transition-all group text-left relative overflow-hidden flex flex-row items-center gap-5 sm:gap-6 w-full">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-dark-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10 flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-dark-gold/10 flex items-center justify-center group-hover:bg-dark-gold transition-colors">
+                                <svg class="w-7 h-7 sm:w-8 sm:h-8 text-dark-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                                 </svg>
                             </div>
+                            <div class="relative z-10 flex-1 min-w-0">
+                                <h3 class="text-xl sm:text-2xl font-serif font-bold mb-1 text-gray-800 group-hover:text-dark-gold transition">Evaluate</h3>
+                                <p class="text-sm text-gray-600 leading-relaxed">Get a professional property evaluation to understand your home's market value</p>
+                                <div class="mt-2 flex items-center text-dark-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="text-sm font-medium mr-2">Get Started</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <!-- Listings: sale vs rent -->
+                    <div class="flex flex-col justify-center bg-gray-50 border-2 border-gray-200 rounded-xl p-6 sm:p-8 lg:min-h-full">
+                        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Browse listings</p>
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">Homes on the market</h3>
+                        <p class="text-sm text-gray-600 mb-6 leading-relaxed">Search current homes for sale or rental properties on HAR.com.</p>
+                        <div class="flex flex-col gap-3">
+                            <button type="button" onclick="showUnderConstruction()" class="flex items-center justify-between gap-4 bg-white border-2 border-gray-200 rounded-lg px-4 py-4 hover:border-dark-gold hover:shadow-md transition-all group w-full text-left cursor-pointer">
+                                <div class="text-left">
+                                    <span class="font-serif font-bold text-gray-900 group-hover:text-dark-gold transition block">Current listings</span>
+                                    <span class="text-xs text-gray-500">Homes for sale</span>
+                                </div>
+                                <svg class="w-5 h-5 text-dark-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                            <button type="button" onclick="showUnderConstruction()" class="flex items-center justify-between gap-4 bg-white border-2 border-gray-200 rounded-lg px-4 py-4 hover:border-dark-gold hover:shadow-md transition-all group w-full text-left cursor-pointer">
+                                <div class="text-left">
+                                    <span class="font-serif font-bold text-gray-900 group-hover:text-dark-gold transition block">Rental properties</span>
+                                    <span class="text-xs text-gray-500">Homes for rent</span>
+                                </div>
+                                <svg class="w-5 h-5 text-dark-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
                         </div>
-                    </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -914,6 +931,14 @@
             if (location) {
                 // Redirect to search.html with location parameter
                 window.location.href = `search.html?city=${encodeURIComponent(location)}`;
+            }
+        }
+
+        function showUnderConstruction() {
+            const el = document.getElementById('actionUnderConstructionMsg');
+            if (el) {
+                el.classList.remove('hidden');
+                el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
         }
 

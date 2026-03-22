@@ -151,8 +151,9 @@
                 
                 <div class="max-w-6xl mx-auto">
                     <!-- Search Form -->
-                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
+                    <div id="property-search" class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8 scroll-mt-28">
                         <form id="homeSearchForm" class="space-y-4">
+                            <input type="hidden" name="listingType" id="listingType" value="sale">
                             <!-- Search Bar with Magnifying Glass -->
                             <div class="relative">
                                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -344,14 +345,18 @@
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             const cityParam = urlParams.get('city');
+            const typeParam = urlParams.get('type');
             
             if (cityParam) {
                 const cityInput = document.getElementById('city');
                 if (cityInput) {
                     cityInput.value = decodeURIComponent(cityParam);
-                    // Focus on the city input
                     cityInput.focus();
                 }
+            }
+            if (typeParam === 'rent') {
+                const listingType = document.getElementById('listingType');
+                if (listingType) listingType.value = 'rent';
             }
         });
         
