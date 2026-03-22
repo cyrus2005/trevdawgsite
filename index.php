@@ -318,8 +318,8 @@
                         </div>
                     </div>
                 </div>
-                <a href="https://www.google.com/search?q=HDRS+Realty+Co.+Reviews" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-dark-gold text-white px-6 py-3 rounded-lg font-medium hover:bg-gold transition whitespace-nowrap shadow-sm">
-                    Read reviews on Google
+                <a href="https://www.google.com/search?sca_esv=14041948d1d25a20&sxsrf=ANbL-n6bcOX5yZD_KuZtrTnUkRtSk3QcdA:1774212621146&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOUd1MCQqZHhdZE_bWPntU5o_srsRvehD5WFo_67-lvVVmXDKkjg5jSgFhkSJNXDD3qYkLLNFD2u13ydDOVnqgyXiL4M6mkH-Ytdxin43Dla2v9pPRIzQ3tnbJTt_Y0D9_cUNF89GXwsh0F4RJ9DSSV0zhMaZ&q=Trevor+Hondros+Realtor,+REAL+BROKER+LLC-+Houston,+TX+Reviews&sa=X&ved=2ahUKEwjP-6eIsbSTAxXQlmoFHd6ABCEQ0bkNegQINhAF&biw=1368&bih=785&dpr=2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-dark-gold text-white px-6 py-3 rounded-lg font-medium hover:bg-gold transition whitespace-nowrap shadow-sm">
+                    Read reviews from Google
                     <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </a>
             </div>
@@ -333,7 +333,7 @@
                         <svg class="w-4 h-4 text-dark-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     </div>
                     <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Google review</p>
-                    <blockquote class="text-gray-700 leading-relaxed flex-grow" cite="https://www.google.com/search?q=HDRS+Realty+Co.+Reviews">
+                    <blockquote class="text-gray-700 leading-relaxed flex-grow" cite="https://www.google.com/search?sca_esv=14041948d1d25a20&sxsrf=ANbL-n6bcOX5yZD_KuZtrTnUkRtSk3QcdA:1774212621146&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOUd1MCQqZHhdZE_bWPntU5o_srsRvehD5WFo_67-lvVVmXDKkjg5jSgFhkSJNXDD3qYkLLNFD2u13ydDOVnqgyXiL4M6mkH-Ytdxin43Dla2v9pPRIzQ3tnbJTt_Y0D9_cUNF89GXwsh0F4RJ9DSSV0zhMaZ&q=Trevor+Hondros+Realtor,+REAL+BROKER+LLC-+Houston,+TX+Reviews&sa=X&ved=2ahUKEwjP-6eIsbSTAxXQlmoFHd6ABCEQ0bkNegQINhAF&biw=1368&bih=785&dpr=2">
                         <p class="italic">“Trevor made the entire process seamless. His expertise and dedication are unmatched!”</p>
                     </blockquote>
                     <p class="mt-4 font-semibold text-gray-900">Sarah Johnson</p>
@@ -348,7 +348,7 @@
                         <svg class="w-4 h-4 text-dark-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     </div>
                     <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Google review</p>
-                    <blockquote class="text-gray-700 leading-relaxed flex-grow" cite="https://www.google.com/search?q=HDRS+Realty+Co.+Reviews">
+                    <blockquote class="text-gray-700 leading-relaxed flex-grow" cite="https://www.google.com/search?sca_esv=14041948d1d25a20&sxsrf=ANbL-n6bcOX5yZD_KuZtrTnUkRtSk3QcdA:1774212621146&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOUd1MCQqZHhdZE_bWPntU5o_srsRvehD5WFo_67-lvVVmXDKkjg5jSgFhkSJNXDD3qYkLLNFD2u13ydDOVnqgyXiL4M6mkH-Ytdxin43Dla2v9pPRIzQ3tnbJTt_Y0D9_cUNF89GXwsh0F4RJ9DSSV0zhMaZ&q=Trevor+Hondros+Realtor,+REAL+BROKER+LLC-+Houston,+TX+Reviews&sa=X&ved=2ahUKEwjP-6eIsbSTAxXQlmoFHd6ABCEQ0bkNegQINhAF&biw=1368&bih=785&dpr=2">
                         <p class="italic">“Best real estate experience we've ever had. Highly recommend HDRS Realty Co.”</p>
                     </blockquote>
                     <p class="mt-4 font-semibold text-gray-900">Michael Chen</p>
