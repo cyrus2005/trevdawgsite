@@ -459,5 +459,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Pulse animation removed per user request
+
+    // Hero background video: skip loading when user prefers reduced motion (static JPG only)
+    const heroVideo = document.getElementById('heroVideo');
+    const heroSection = document.getElementById('hero');
+    if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        heroVideo.pause();
+        heroVideo.removeAttribute('autoplay');
+        heroVideo.preload = 'none';
+    } else if (heroVideo && heroSection) {
+        const startHeroVideo = function () {
+            heroVideo.preload = 'auto';
+            heroVideo.play().catch(function () {});
+        };
+        if ('IntersectionObserver' in window) {
+            const vio = new IntersectionObserver(
+                function (entries) {
+                    if (entries.some(function (e) { return e.isIntersecting; })) {
+                        startHeroVideo();
+                        vio.disconnect();
+                    }
+                },
+                { rootMargin: '100px 0px', threshold: 0 }
+            );
+            vio.observe(heroSection);
+        } else {
+            startHeroVideo();
+        }
+    }
 });
 

@@ -148,9 +148,26 @@
 
     <!-- Hero Section with Search and Action Options -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center py-24 pt-32">
-        <!-- Background Property Image -->
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/media/properties/hero-background.jpg');">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+        <!-- Background: static image (fast first paint + reduced-motion fallback) + looping video -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/media/properties/hero-background.jpg');" aria-hidden="true"></div>
+            <video
+                id="heroVideo"
+                class="absolute inset-0 z-[1] h-full w-full object-cover object-center pointer-events-none motion-reduce:hidden"
+                autoplay
+                muted
+                loop
+                playsinline
+                poster="assets/media/properties/hero-background.jpg"
+                preload="metadata"
+                fetchpriority="high"
+                disablepictureinpicture
+                disableremoteplayback
+                aria-hidden="true"
+            >
+                <source src="assets/media/properties/mainbckg.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 z-[2] bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
         <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
             <!-- Success/Error Messages -->
@@ -178,7 +195,7 @@
                 <div class="bg-white/80 backdrop-blur-sm rounded-lg shadow-2xl p-4 sm:p-6 md:p-8 md:p-10 max-w-4xl mx-auto hero-search-animate">
                     <form id="heroSearchForm" onsubmit="handleHeroSearch(event)" class="flex flex-row gap-2 sm:gap-3 md:gap-4">
                         <!-- Buy Button (Pre-selected) - Hidden on mobile -->
-                        <button type="button" id="buyBtn" class="hidden sm:flex bg-dark-gold text-white px-4 py-3 sm:px-6 sm:py-4 rounded-lg font-medium hover:bg-gold transition items-center justify-center gap-1 sm:gap-2 whitespace-nowrap flex-shrink-0">
+                        <button type="button" id="buyBtn" class="flex bg-dark-gold text-white px-3 py-3 sm:px-6 sm:py-4 rounded-lg font-medium hover:bg-gold transition items-center justify-center gap-1 sm:gap-2 whitespace-nowrap flex-shrink-0" aria-haspopup="dialog" aria-controls="harBuyModal" title="Open MLS home search">
                             <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                             </svg>
@@ -515,7 +532,7 @@
                     </div>
                     <div class="flex-1 text-center md:text-left">
                         <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Trevor Hondros</h3>
-                        <p class="text-lg text-gray-600 mb-4">Real Estate Professional • Priority One Real Estate</p>
+                        <p class="text-lg text-gray-600 mb-4">Real Estate Professional • Real Broker</p>
                         <p class="text-gray-700 leading-relaxed mb-6">
                             Real estate wasn't my initial career path, but once I began helping families achieve homeownership, <strong>I found my true calling</strong>. I bring dedication, strong work ethic, and proven results to every transaction.
                         </p>
@@ -729,7 +746,7 @@
                         </svg>
                         <span>(713) 408-0604</span>
                     </a>
-                    <a href="mailto:info@hdrsrealty.com" class="bg-white text-dark-gold px-6 py-4 rounded-lg font-semibold hover:bg-gold hover:text-white transition flex items-center justify-center gap-3">
+                    <a href="mailto:connect@hdrsrealtyco.com" class="bg-white text-dark-gold px-6 py-4 rounded-lg font-semibold hover:bg-gold hover:text-white transition flex items-center justify-center gap-3">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
@@ -812,7 +829,7 @@
                     <h4 class="text-sm font-medium mb-4 tracking-wide uppercase">Contact</h4>
                     <div class="space-y-3 text-sm text-gray-400">
                         <p class="text-white font-semibold">Trevor Hondros</p>
-                        <p>Priority One Real Estate</p>
+                        <p>Real Broker</p>
                         <div class="mt-4 space-y-2">
                             <p class="flex items-center gap-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -824,7 +841,7 @@
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
-                                <a href="mailto:info@hdrsrealty.com" class="hover:text-gold transition">info@hdrsrealty.com</a>
+                                <a href="mailto:connect@hdrsrealtyco.com" class="hover:text-gold transition">connect@hdrsrealtyco.com</a>
                             </p>
                             <p class="flex items-start gap-2">
                                 <svg class="w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -841,6 +858,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- HAR MLS IDX (Buy): full listing search in a modal -->
+    <div id="harBuyModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="harBuyModalTitle">
+        <div id="harBuyModalBackdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm" tabindex="-1"></div>
+        <div class="relative z-10 flex w-full max-w-6xl flex-col overflow-hidden rounded-xl bg-white shadow-2xl" style="height: min(90vh, 900px);">
+            <div class="flex shrink-0 items-center justify-between gap-4 border-b border-gray-200 bg-white px-4 py-3">
+                <h2 id="harBuyModalTitle" class="font-serif text-lg font-bold text-gray-900 sm:text-xl">Search homes for sale (MLS)</h2>
+                <button type="button" id="harBuyModalClose" class="p-1 text-3xl leading-none text-gray-500 hover:text-dark-gold" aria-label="Close">&times;</button>
+            </div>
+            <div class="min-h-0 flex-1 bg-gray-100">
+                <iframe id="harBuyModalIframe" class="h-full w-full min-h-[60vh] border-0 sm:min-h-0" title="HAR MLS property listings"></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- Floating Contact Button -->
     <div id="floatingContact" class="fixed bottom-6 right-6 z-50">
@@ -896,17 +927,53 @@
             }
         }
 
-        // Hero search function
+        // HAR IDX MLS listing search (Buy tab) — same embed as har.com agent IDX
+        var HAR_IDX_BUY_URL = 'https://www.har.com/idx/mls/listing?sitetype=aws&cid=770582&mlsorgid=1&allmls=n';
+
+        function openHarBuyModal() {
+            var modal = document.getElementById('harBuyModal');
+            var iframe = document.getElementById('harBuyModalIframe');
+            if (!modal || !iframe) return;
+            iframe.src = HAR_IDX_BUY_URL;
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeHarBuyModal() {
+            var modal = document.getElementById('harBuyModal');
+            var iframe = document.getElementById('harBuyModalIframe');
+            if (!modal) return;
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+            if (iframe) iframe.src = 'about:blank';
+        }
+
+        window.openHarBuyModal = openHarBuyModal;
+        window.closeHarBuyModal = closeHarBuyModal;
+
+        // Hero search: Buy tab opens HAR MLS IDX in a popup
         function handleHeroSearch(event) {
             event.preventDefault();
-            const searchInput = document.getElementById('heroSearchInput');
-            const location = searchInput.value.trim();
-            
+            var searchInput = document.getElementById('heroSearchInput');
+            var location = searchInput ? searchInput.value.trim() : '';
             if (location) {
-                // Redirect to search.html with location parameter
-                window.location.href = `search.html?city=${encodeURIComponent(location)}`;
+                openHarBuyModal();
             }
         }
+
+        (function initHarBuyModalControls() {
+            var closeBtn = document.getElementById('harBuyModalClose');
+            var backdrop = document.getElementById('harBuyModalBackdrop');
+            var buyBtn = document.getElementById('buyBtn');
+            if (closeBtn) closeBtn.addEventListener('click', closeHarBuyModal);
+            if (backdrop) backdrop.addEventListener('click', closeHarBuyModal);
+            if (buyBtn) buyBtn.addEventListener('click', openHarBuyModal);
+            document.addEventListener('keydown', function (e) {
+                if (e.key !== 'Escape') return;
+                var modal = document.getElementById('harBuyModal');
+                if (modal && !modal.classList.contains('hidden')) closeHarBuyModal();
+            });
+        })();
 
         window.showUnderConstruction = function() {
             const el = document.getElementById('actionUnderConstructionMsg');

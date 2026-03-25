@@ -674,3 +674,10 @@ section {
     opacity: 0;
     animation: fadeInUpHero 1s ease-out 1.6s forwards;
 }
+
+/* Hero video: hide when user prefers reduced motion (static JPG remains) */
+@media (prefers-reduced-motion: reduce) {
+    #heroVideo {
+        display: none !important;
+    }
+}

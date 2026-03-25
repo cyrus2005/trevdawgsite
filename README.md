@@ -66,9 +66,9 @@ Professional real estate website for Trevor Hondros serving the Houston area.
 ## Contact Information
 
 - **Agent**: Trevor Hondros
-- **Company**: HDRS Realty Co. | Priority One Real Estate
+- **Company**: HDRS Realty Co. | Real Broker
 - **Phone**: (713) 408-0604
-- **Email**: info@hdrsrealty.com
+- **Email**: connect@hdrsrealtyco.com
 
 ## Notes
 
