@@ -14,7 +14,7 @@ define('DB_PASS', 'your_database_password'); // Replace with your database passw
 define('DB_CHARSET', 'utf8mb4');
 
 // Email configuration
-define('ADMIN_EMAIL', 'connect@hdrsrealtyco.com'); // Main email for form submissions
+define('ADMIN_EMAIL', 'cyruswilburn@icloud.com'); // Main email for form submissions
 define('SITE_EMAIL', 'noreply@hdrsrealtyco.com'); // Email for automated messages
 
 // Error reporting (set to false in production)

@@ -26,6 +26,7 @@ DirectoryIndex index.php index.html
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteRule ^search/?$ search.html [L]
+    RewriteRule ^connect/?$ connect.html [L]
 </IfModule>
 
 # Enable error reporting (disable in production)

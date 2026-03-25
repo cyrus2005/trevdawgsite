@@ -27,6 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = isset($_POST['email']) ? filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL) : '';
     $phone = isset($_POST['phone']) ? htmlspecialchars(trim($_POST['phone'])) : '';
     $message = isset($_POST['message']) ? htmlspecialchars(trim($_POST['message'])) : '';
+    $returnTo = isset($_POST['returnTo']) ? trim($_POST['returnTo']) : '';
+    $interestRaw = isset($_POST['interest']) ? strtolower(trim($_POST['interest'])) : 'general';
+    $allowedInterest = ['buy', 'sell', 'evaluate', 'general'];
+    $interest = in_array($interestRaw, $allowedInterest, true) ? $interestRaw : 'general';
+    $interestLabels = [
+        'buy' => 'Buy a home',
+        'sell' => 'Sell your home',
+        'evaluate' => 'Property evaluation',
+        'general' => 'General contact',
+    ];
+    $interestLabel = $interestLabels[$interest] ?? 'General contact';
     
     // Validation
     $errors = [];
@@ -51,6 +62,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Save to database
         if ($db) {
             try {
+                $messageForDb = $message;
+                if ($interest !== 'general') {
+                    $messageForDb = "[Interest: " . $interestLabel . "]\n\n" . $message;
+                }
                 $stmt = $db->prepare("INSERT INTO contact_submissions (first_name, last_name, name, email, phone, message, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
                 $saved = $stmt->execute([
                     $firstName,
@@ -58,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $name,
                     $email,
                     $phone ?: null,
-                    $message,
+                    $messageForDb,
                     $_SERVER['REMOTE_ADDR'] ?? null,
                     $_SERVER['HTTP_USER_AGENT'] ?? null
                 ]);
@@ -69,10 +84,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         // Email configuration
         $to = ADMIN_EMAIL;
-        $subject = "New Contact Form Submission from HDRS Realty Co.";
+        $subject = "HDRS Realty — " . $interestLabel . " — " . $name;
         
         $email_body = "NEW CONTACT FORM SUBMISSION - HDRS Realty Co.\n\n";
         $email_body .= "═══════════════════════════════════════════\n\n";
+        $email_body .= "INTEREST / TOPIC:\n" . $interestLabel . "\n\n";
         $email_body .= "CONTACT INFORMATION:\n";
         $email_body .= "Name: " . $name . "\n";
         if (!empty($firstName) && !empty($lastName)) {
@@ -106,13 +122,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         
         // Success - redirect (even if email fails, data is saved)
-        $redirect = file_exists(__DIR__ . '/../../index.php') ? '/index.php' : '/index.html';
-        header("Location: " . $redirect . "?success=1#contact");
+        if ($returnTo === 'connect') {
+            header("Location: ../../connect.html?success=1");
+        } else {
+            $redirect = file_exists(__DIR__ . '/../../index.php') ? '/index.php' : '/index.html';
+            header("Location: " . $redirect . "?success=1#contact");
+        }
         exit();
     } else {
         // Validation errors - redirect with error message
-        $redirect = file_exists(__DIR__ . '/../../index.php') ? '/index.php' : '/index.html';
-        header("Location: " . $redirect . "?error=1#contact");
+        if ($returnTo === 'connect') {
+            header("Location: ../../connect.html?error=1");
+        } else {
+            $redirect = file_exists(__DIR__ . '/../../index.php') ? '/index.php' : '/index.html';
+            header("Location: " . $redirect . "?error=1#contact");
+        }
         exit();
     }
 } else {
