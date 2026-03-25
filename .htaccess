@@ -22,6 +22,12 @@ Options -Indexes
 # Set default index file
 DirectoryIndex index.php index.html
 
+# Pretty URLs: /search and /search/ -> search.html (avoids 404 when extension is omitted)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^search/?$ search.html [L]
+</IfModule>
+
 # Enable error reporting (disable in production)
 # php_flag display_errors on
 # php_value error_reporting E_ALL

@@ -681,3 +681,20 @@ section {
         display: none !important;
     }
 }
+
+/* HAR MLS modal: fixed z-index so it sits above header (z-50); Tailwind z-[100] may not exist in CDN build */
+#harBuyModal {
+    z-index: 100;
+}
+#harBuyModal .har-buy-modal-panel {
+    position: relative;
+    z-index: 1;
+}
+#harBuyModal .har-buy-modal-toolbar {
+    position: relative;
+    z-index: 2;
+}
+#harBuyModal .har-buy-modal-close {
+    position: relative;
+    z-index: 3;
+}

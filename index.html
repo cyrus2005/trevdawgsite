@@ -179,8 +179,8 @@
                 <p class="text-lg font-semibold">There was an error submitting your form. Please try again or contact us directly.</p>
             </div>
 
-            <!-- Main Search Bar -->
-            <div class="text-center mb-12 px-4">
+            <!-- Main Search Bar (anchor for #search links) -->
+            <div id="search" class="text-center mb-12 px-4 scroll-mt-28">
                 <div class="mb-8 sm:mb-10">
                     <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4 text-white drop-shadow-lg hero-title-animate">
                         <span class="text-dark-gold">HDRS</span> <span class="text-white">REALTY CO.</span>
@@ -860,12 +860,12 @@
     </footer>
 
     <!-- HAR MLS IDX (Buy): full listing search in a modal -->
-    <div id="harBuyModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="harBuyModalTitle">
+    <div id="harBuyModal" class="hidden fixed inset-0 flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="harBuyModalTitle">
         <div id="harBuyModalBackdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm" tabindex="-1"></div>
-        <div class="relative z-10 flex w-full max-w-6xl flex-col overflow-hidden rounded-xl bg-white shadow-2xl" style="height: min(90vh, 900px);">
-            <div class="flex shrink-0 items-center justify-between gap-4 border-b border-gray-200 bg-white px-4 py-3">
+        <div class="har-buy-modal-panel flex w-full max-w-6xl flex-col overflow-hidden rounded-xl bg-white shadow-2xl" style="height: min(90vh, 900px);">
+            <div class="har-buy-modal-toolbar flex shrink-0 items-center justify-between gap-4 border-b border-gray-200 bg-white px-4 py-3">
                 <h2 id="harBuyModalTitle" class="font-serif text-lg font-bold text-gray-900 sm:text-xl">Search homes for sale (MLS)</h2>
-                <button type="button" id="harBuyModalClose" class="p-1 text-3xl leading-none text-gray-500 hover:text-dark-gold" aria-label="Close">&times;</button>
+                <button type="button" id="harBuyModalClose" class="har-buy-modal-close p-2 text-3xl leading-none text-gray-500 hover:text-dark-gold" aria-label="Close" onclick="window.closeHarBuyModal && window.closeHarBuyModal()">&times;</button>
             </div>
             <div class="min-h-0 flex-1 bg-gray-100">
                 <iframe id="harBuyModalIframe" class="h-full w-full min-h-[60vh] border-0 sm:min-h-0" title="HAR MLS property listings"></iframe>
@@ -891,10 +891,12 @@
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
         // Handle contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            // Let the form submit normally to PHP handler
-            // PHP will handle validation and redirect
-        });
+        var contactFormEl = document.getElementById('contactForm');
+        if (contactFormEl) {
+            contactFormEl.addEventListener('submit', function(e) {
+                // Let the form submit normally to PHP handler
+            });
+        }
         
         // Check for success/error messages from PHP redirect
         const urlParams = new URLSearchParams(window.location.search);
@@ -965,7 +967,13 @@
             var closeBtn = document.getElementById('harBuyModalClose');
             var backdrop = document.getElementById('harBuyModalBackdrop');
             var buyBtn = document.getElementById('buyBtn');
-            if (closeBtn) closeBtn.addEventListener('click', closeHarBuyModal);
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeHarBuyModal();
+                });
+            }
             if (backdrop) backdrop.addEventListener('click', closeHarBuyModal);
             if (buyBtn) buyBtn.addEventListener('click', openHarBuyModal);
             document.addEventListener('keydown', function (e) {
