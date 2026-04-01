@@ -202,39 +202,27 @@
                     </p>
                 </div>
                 
-                <!-- Search Bar with Buy Pre-selected -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-lg shadow-2xl p-4 sm:p-6 md:p-8 md:p-10 max-w-4xl mx-auto">
-                    <form id="heroSearchForm" onsubmit="handleHeroSearch(event)" class="flex flex-row gap-2 sm:gap-3 md:gap-4">
-                        <!-- Buy Button (Pre-selected) - Hidden on mobile -->
-                        <button type="button" id="buyBtn" class="flex bg-dark-gold text-white px-3 py-3 sm:px-6 sm:py-4 rounded-lg font-medium hover:bg-gold transition items-center justify-center gap-1 sm:gap-2 whitespace-nowrap flex-shrink-0" aria-haspopup="dialog" aria-controls="harBuyModal" title="Open MLS home search">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                            </svg>
-                            <span class="text-sm sm:text-base">Buy</span>
+                <!-- Hero CTAs: Buy, Sell, Take me to find (HAR in branded modal) -->
+                <div class="bg-white/92 backdrop-blur-md rounded-xl shadow-2xl border-2 border-dark-gold max-w-3xl mx-auto p-5 sm:p-7 md:p-8">
+                    <p class="text-center text-xs font-semibold uppercase tracking-[0.2em] text-dark-gold mb-1">Start here</p>
+                    <p class="text-center text-gray-600 text-sm sm:text-base mb-6 leading-relaxed">Buy, sell, or search MLS homes — same look and feel across the site.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                        <button type="button" id="buyBtn" class="group flex flex-col items-center justify-center gap-2 rounded-lg bg-dark-gold text-white px-4 py-4 sm:py-5 shadow-md hover:bg-gold transition border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-dark-gold focus:ring-offset-2" aria-haspopup="dialog" aria-controls="harBuyModal" title="Search MLS listings to buy">
+                            <svg class="w-6 h-6 opacity-95 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                            <span class="font-serif text-lg font-bold tracking-tight">Buy</span>
+                            <span class="text-[11px] uppercase tracking-wide text-white/85">MLS search</span>
                         </button>
-                        
-                        <!-- Search Input -->
-                        <div class="flex-1 relative min-w-0">
-                            <input 
-                                type="text" 
-                                id="heroSearchInput" 
-                                placeholder="Enter city or zip code..." 
-                                class="w-full px-4 py-3 sm:px-6 sm:py-4 pr-10 sm:pr-12 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-dark-gold transition text-sm sm:text-base md:text-lg"
-                                required
-                            >
-                            <svg class="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </div>
-                        
-                        <!-- Search Button -->
-                        <button type="submit" class="bg-dark-gold text-white px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-4 rounded-lg font-medium hover:bg-gold transition flex items-center justify-center gap-1 sm:gap-2 whitespace-nowrap flex-shrink-0">
-                            <span class="text-sm sm:text-base">Search</span>
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
+                        <button type="button" id="heroSellBtn" class="group flex flex-col items-center justify-center gap-2 rounded-lg border-2 border-dark-gold bg-white text-dark-gold px-4 py-4 sm:py-5 shadow-sm hover:bg-dark-gold hover:text-white transition focus:outline-none focus:ring-2 focus:ring-dark-gold focus:ring-offset-2" title="Start selling your home">
+                            <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span class="font-serif text-lg font-bold tracking-tight">Sell</span>
+                            <span class="text-[11px] uppercase tracking-wide text-gray-500 group-hover:text-white/90">List with us</span>
                         </button>
-                    </form>
+                        <button type="button" id="heroFindBtn" class="flex flex-col items-center justify-center gap-2 rounded-lg bg-gray-900 text-white px-4 py-4 sm:py-5 shadow-md border-2 border-dark-gold hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-dark-gold focus:ring-offset-2" aria-haspopup="dialog" aria-controls="harBuyModal" title="Open HAR my quick search">
+                            <svg class="w-6 h-6 text-dark-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            <span class="font-serif text-lg font-bold tracking-tight text-center leading-tight">Take me to<br class="sm:hidden"> find!</span>
+                            <span class="text-[11px] uppercase tracking-wide text-gray-400">HAR quick search</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -860,19 +848,23 @@
         </div>
     </footer>
 
-    <!-- HAR MLS IDX quick search (Buy): embedded in branded modal shell -->
+    <!-- HAR MLS IDX: iframe in HDRS-styled shell (Buy + Take me to find) -->
     <div id="harBuyModal" class="hidden fixed inset-0 flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="harBuyModalTitle">
         <div id="harBuyModalBackdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm" tabindex="-1"></div>
         <div class="har-buy-modal-panel flex w-full max-w-6xl flex-col overflow-hidden rounded-xl bg-white shadow-2xl border-2 border-dark-gold" style="height: min(90vh, 900px);">
             <div class="har-buy-modal-toolbar flex shrink-0 items-center justify-between gap-4 border-b-2 border-dark-gold bg-gradient-to-b from-white to-gray-50 px-4 py-3 sm:px-5">
                 <div class="min-w-0 pr-2">
-                    <h2 id="harBuyModalTitle" class="font-serif text-lg font-bold text-gray-900 sm:text-xl leading-tight"><span class="text-dark-gold">HDRS</span> · MLS quick search</h2>
-                    <p class="text-xs text-gray-500 mt-0.5 hidden sm:block">Powered by HAR.com — search all MLS listings</p>
+                    <h2 id="harBuyModalTitle" class="font-serif text-lg font-bold text-gray-900 sm:text-xl leading-tight"><span class="text-dark-gold">HDRS</span> · MLS search</h2>
+                    <p id="harIdxModalSub" class="text-xs text-gray-500 mt-0.5">Powered by HAR.com</p>
                 </div>
                 <button type="button" id="harBuyModalClose" class="har-buy-modal-close shrink-0 rounded-lg p-2 text-3xl leading-none text-gray-500 hover:bg-dark-gold/10 hover:text-dark-gold transition" aria-label="Close" onclick="window.closeHarBuyModal && window.closeHarBuyModal()">&times;</button>
             </div>
-            <div class="min-h-0 flex-1 bg-gray-100 p-1 sm:p-2">
-                <iframe id="harBuyModalIframe" class="h-full w-full min-h-[60vh] rounded-lg border-0 bg-white shadow-inner sm:min-h-0" title="HAR MLS quick search"></iframe>
+            <div class="min-h-0 flex-1 bg-gray-100 p-1 sm:p-2 min-h-0">
+                <iframe id="harBuyModalIframe" class="h-full w-full min-h-[55vh] rounded-lg border-0 bg-white shadow-inner sm:min-h-0" title="HAR MLS search" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="shrink-0 flex flex-wrap items-center justify-between gap-2 border-t border-gray-200 bg-gradient-to-b from-gray-50 to-white px-4 py-2.5">
+                <p class="text-[11px] text-gray-500 hidden sm:block">If the search doesn’t load here, open it in a full tab.</p>
+                <a id="harIdxOpenNewTab" href="#" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-dark-gold hover:text-gold hover:underline sm:ml-auto">Open in new tab</a>
             </div>
         </div>
     </div>
@@ -937,16 +929,41 @@
             }
         }
 
-        // HAR IDX MLS listing search (Buy tab) — same embed as har.com agent IDX
         var HAR_IDX_BUY_URL = 'https://www.har.com/idx/quicksearch?sitetype=aws&cid=770582&allmls=y';
+        var HAR_IDX_FIND_URL = 'https://www.har.com/idx/myquicksearch?sitetype=aws&cid=770582&allmls=n';
 
-        function openHarBuyModal() {
+        function openHarIdxEmbedModal(url, titleHtml, subText, iframeTitle) {
             var modal = document.getElementById('harBuyModal');
             var iframe = document.getElementById('harBuyModalIframe');
+            var titleEl = document.getElementById('harBuyModalTitle');
+            var subEl = document.getElementById('harIdxModalSub');
+            var tabLink = document.getElementById('harIdxOpenNewTab');
             if (!modal || !iframe) return;
-            iframe.src = HAR_IDX_BUY_URL;
+            iframe.src = url;
+            iframe.title = iframeTitle || 'HAR MLS search';
+            if (titleEl) titleEl.innerHTML = titleHtml;
+            if (subEl) subEl.textContent = subText || '';
+            if (tabLink) tabLink.href = url;
             modal.classList.remove('hidden');
             document.body.classList.add('overflow-hidden');
+        }
+
+        function openHarBuyModal() {
+            openHarIdxEmbedModal(
+                HAR_IDX_BUY_URL,
+                '<span class="text-dark-gold">HDRS</span> · Buy — MLS search',
+                'Powered by HAR.com — search MLS listings',
+                'HAR MLS buy search'
+            );
+        }
+
+        function openHarFindModal() {
+            openHarIdxEmbedModal(
+                HAR_IDX_FIND_URL,
+                '<span class="text-dark-gold">HDRS</span> · Take me to find!',
+                'HAR my quick search — find homes that fit you',
+                'HAR my quick search'
+            );
         }
 
         function closeHarBuyModal() {
@@ -959,22 +976,15 @@
         }
 
         window.openHarBuyModal = openHarBuyModal;
+        window.openHarFindModal = openHarFindModal;
         window.closeHarBuyModal = closeHarBuyModal;
-
-        // Hero search: Buy tab opens HAR MLS IDX in a popup
-        function handleHeroSearch(event) {
-            event.preventDefault();
-            var searchInput = document.getElementById('heroSearchInput');
-            var location = searchInput ? searchInput.value.trim() : '';
-            if (location) {
-                openHarBuyModal();
-            }
-        }
 
         (function initHarBuyModalControls() {
             var closeBtn = document.getElementById('harBuyModalClose');
             var backdrop = document.getElementById('harBuyModalBackdrop');
             var buyBtn = document.getElementById('buyBtn');
+            var findBtn = document.getElementById('heroFindBtn');
+            var sellBtn = document.getElementById('heroSellBtn');
             if (closeBtn) {
                 closeBtn.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -984,6 +994,10 @@
             }
             if (backdrop) backdrop.addEventListener('click', closeHarBuyModal);
             if (buyBtn) buyBtn.addEventListener('click', openHarBuyModal);
+            if (findBtn) findBtn.addEventListener('click', openHarFindModal);
+            if (sellBtn) sellBtn.addEventListener('click', function () {
+                showSellForm();
+            });
             document.addEventListener('keydown', function (e) {
                 if (e.key !== 'Escape') return;
                 var modal = document.getElementById('harBuyModal');
