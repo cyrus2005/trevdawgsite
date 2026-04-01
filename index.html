@@ -167,7 +167,7 @@
             >
                 <source src="assets/media/properties/mainbckg.mp4" type="video/mp4">
             </video>
-            <div class="absolute inset-0 z-[2] bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+            <div class="absolute inset-0 z-[2] bg-gradient-to-b from-black/35 via-black/30 to-black/45"></div>
         </div>
         <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
             <!-- Success/Error Messages -->
