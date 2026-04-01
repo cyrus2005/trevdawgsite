@@ -860,16 +860,19 @@
         </div>
     </footer>
 
-    <!-- HAR MLS IDX (Buy): full listing search in a modal -->
+    <!-- HAR MLS IDX quick search (Buy): embedded in branded modal shell -->
     <div id="harBuyModal" class="hidden fixed inset-0 flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="harBuyModalTitle">
         <div id="harBuyModalBackdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm" tabindex="-1"></div>
-        <div class="har-buy-modal-panel flex w-full max-w-6xl flex-col overflow-hidden rounded-xl bg-white shadow-2xl" style="height: min(90vh, 900px);">
-            <div class="har-buy-modal-toolbar flex shrink-0 items-center justify-between gap-4 border-b border-gray-200 bg-white px-4 py-3">
-                <h2 id="harBuyModalTitle" class="font-serif text-lg font-bold text-gray-900 sm:text-xl">Search homes for sale (MLS)</h2>
-                <button type="button" id="harBuyModalClose" class="har-buy-modal-close p-2 text-3xl leading-none text-gray-500 hover:text-dark-gold" aria-label="Close" onclick="window.closeHarBuyModal && window.closeHarBuyModal()">&times;</button>
+        <div class="har-buy-modal-panel flex w-full max-w-6xl flex-col overflow-hidden rounded-xl bg-white shadow-2xl border-2 border-dark-gold" style="height: min(90vh, 900px);">
+            <div class="har-buy-modal-toolbar flex shrink-0 items-center justify-between gap-4 border-b-2 border-dark-gold bg-gradient-to-b from-white to-gray-50 px-4 py-3 sm:px-5">
+                <div class="min-w-0 pr-2">
+                    <h2 id="harBuyModalTitle" class="font-serif text-lg font-bold text-gray-900 sm:text-xl leading-tight"><span class="text-dark-gold">HDRS</span> · MLS quick search</h2>
+                    <p class="text-xs text-gray-500 mt-0.5 hidden sm:block">Powered by HAR.com — search all MLS listings</p>
+                </div>
+                <button type="button" id="harBuyModalClose" class="har-buy-modal-close shrink-0 rounded-lg p-2 text-3xl leading-none text-gray-500 hover:bg-dark-gold/10 hover:text-dark-gold transition" aria-label="Close" onclick="window.closeHarBuyModal && window.closeHarBuyModal()">&times;</button>
             </div>
-            <div class="min-h-0 flex-1 bg-gray-100">
-                <iframe id="harBuyModalIframe" class="h-full w-full min-h-[60vh] border-0 sm:min-h-0" title="HAR MLS property listings"></iframe>
+            <div class="min-h-0 flex-1 bg-gray-100 p-1 sm:p-2">
+                <iframe id="harBuyModalIframe" class="h-full w-full min-h-[60vh] rounded-lg border-0 bg-white shadow-inner sm:min-h-0" title="HAR MLS quick search"></iframe>
             </div>
         </div>
     </div>
@@ -935,7 +938,7 @@
         }
 
         // HAR IDX MLS listing search (Buy tab) — same embed as har.com agent IDX
-        var HAR_IDX_BUY_URL = 'https://www.har.com/idx/mls/listing?sitetype=aws&cid=770582&mlsorgid=1&allmls=n';
+        var HAR_IDX_BUY_URL = 'https://www.har.com/idx/quicksearch?sitetype=aws&cid=770582&allmls=y';
 
         function openHarBuyModal() {
             var modal = document.getElementById('harBuyModal');
