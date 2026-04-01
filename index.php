@@ -149,7 +149,7 @@
     <!-- Hero Section with Search and Action Options -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center py-24 pt-32">
         <!-- Background: static image (fast first paint + reduced-motion fallback) + looping video -->
-        <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none hero-bg-layer" aria-hidden="true">
             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/media/properties/hero-background.jpg');" aria-hidden="true"></div>
             <video
                 id="heroVideo"
@@ -169,7 +169,7 @@
             </video>
             <div class="absolute inset-0 z-[2] bg-gradient-to-b from-black/35 via-black/30 to-black/45"></div>
         </div>
-        <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-6 hero-cta-stack">
             <!-- Success/Error Messages -->
             <?php if (isset($_GET['formSubmitted']) && $_GET['formSubmitted'] == '1'): ?>
                 <div class="mb-8 bg-green-100 border-2 border-green-500 text-green-800 px-6 py-4 rounded-lg text-center">
@@ -202,26 +202,13 @@
                     </p>
                 </div>
                 
-                <!-- Hero CTAs: Buy, Sell, Take me to find (HAR in branded modal) -->
-                <div class="bg-white/92 backdrop-blur-md rounded-xl shadow-2xl border-2 border-dark-gold max-w-3xl mx-auto p-5 sm:p-7 md:p-8">
-                    <p class="text-center text-xs font-semibold uppercase tracking-[0.2em] text-dark-gold mb-1">Start here</p>
-                    <p class="text-center text-gray-600 text-sm sm:text-base mb-6 leading-relaxed">Buy, sell, or search MLS homes — same look and feel across the site.</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-                        <button type="button" id="buyBtn" class="group flex flex-col items-center justify-center gap-2 rounded-lg bg-dark-gold text-white px-4 py-4 sm:py-5 shadow-md hover:bg-gold transition border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-dark-gold focus:ring-offset-2" aria-haspopup="dialog" aria-controls="harBuyModal" title="Search MLS listings to buy">
-                            <svg class="w-6 h-6 opacity-95 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                            <span class="font-serif text-lg font-bold tracking-tight">Buy</span>
-                            <span class="text-[11px] uppercase tracking-wide text-white/85">MLS search</span>
-                        </button>
-                        <button type="button" id="heroSellBtn" class="group flex flex-col items-center justify-center gap-2 rounded-lg border-2 border-dark-gold bg-white text-dark-gold px-4 py-4 sm:py-5 shadow-sm hover:bg-dark-gold hover:text-white transition focus:outline-none focus:ring-2 focus:ring-dark-gold focus:ring-offset-2" title="Start selling your home">
-                            <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <span class="font-serif text-lg font-bold tracking-tight">Sell</span>
-                            <span class="text-[11px] uppercase tracking-wide text-gray-500 group-hover:text-white/90">List with us</span>
-                        </button>
-                        <button type="button" id="heroFindBtn" class="flex flex-col items-center justify-center gap-2 rounded-lg bg-gray-900 text-white px-4 py-4 sm:py-5 shadow-md border-2 border-dark-gold hover:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-dark-gold focus:ring-offset-2" aria-haspopup="dialog" aria-controls="harBuyModal" title="Open HAR my quick search">
-                            <svg class="w-6 h-6 text-dark-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                            <span class="font-serif text-lg font-bold tracking-tight text-center leading-tight">Take me to<br class="sm:hidden"> find!</span>
-                            <span class="text-[11px] uppercase tracking-wide text-gray-400">HAR quick search</span>
-                        </button>
+                <!-- Hero CTAs (styled in assets/css/styles.css — .hero-cta-*) -->
+                <div class="hero-cta-bar hero-search-animate text-center sm:text-left">
+                    <p class="hero-cta-bar__lead text-center">MLS search, listing with HDRS, or HAR quick search — choose a path below.</p>
+                    <div class="hero-cta-row">
+                        <button type="button" id="buyBtn" class="hero-cta-btn hero-cta-btn--buy w-full sm:w-auto" aria-haspopup="dialog" aria-controls="harBuyModal" title="Search MLS listings to buy" data-hdrs-action="har-buy">Buy · MLS search</button>
+                        <button type="button" id="heroSellBtn" class="hero-cta-btn hero-cta-btn--sell w-full sm:w-auto" title="Start selling your home" data-hdrs-action="sell">Sell your home</button>
+                        <button type="button" id="heroFindBtn" class="hero-cta-btn hero-cta-btn--find w-full sm:w-auto" aria-haspopup="dialog" aria-controls="harBuyModal" title="Open HAR quick search" data-hdrs-action="har-find">Take me to find</button>
                     </div>
                 </div>
             </div>
@@ -230,7 +217,7 @@
             <div id="sellForm" class="hidden bg-white rounded-lg shadow-2xl p-4 sm:p-6 md:p-8 mb-8">
                 <div class="flex justify-between items-center mb-4 sm:mb-6">
                     <h2 class="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-gray-800">Sell Your Property</h2>
-                    <button onclick="hideSellForm()" class="text-gray-500 hover:text-dark-gold text-2xl sm:text-3xl">&times;</button>
+                    <button type="button" onclick="window.hideSellForm&&window.hideSellForm();" class="text-gray-500 hover:text-dark-gold text-2xl sm:text-3xl">&times;</button>
                 </div>
                 <form id="sellFormElement" action="assets/php/sell_evaluate.php" method="POST" class="space-y-4">
                     <input type="hidden" name="formType" value="sell">
@@ -266,7 +253,7 @@
             <div id="evaluateForm" class="hidden bg-white rounded-lg shadow-2xl p-4 sm:p-6 md:p-8 mb-8">
                 <div class="flex justify-between items-center mb-4 sm:mb-6">
                     <h2 class="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-gray-800">Evaluate Your Property</h2>
-                    <button onclick="hideEvaluateForm()" class="text-gray-500 hover:text-dark-gold text-2xl sm:text-3xl">&times;</button>
+                    <button type="button" onclick="window.hideEvaluateForm&&window.hideEvaluateForm();" class="text-gray-500 hover:text-dark-gold text-2xl sm:text-3xl">&times;</button>
                 </div>
                 <form id="evaluateFormElement" action="assets/php/sell_evaluate.php" method="POST" class="space-y-4">
                     <input type="hidden" name="formType" value="evaluate">
@@ -883,52 +870,6 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/search.js"></script>
     <script>
-        // Set current year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Handle contact form submission
-        var contactFormEl = document.getElementById('contactForm');
-        if (contactFormEl) {
-            contactFormEl.addEventListener('submit', function(e) {
-                // Let the form submit normally to PHP handler
-            });
-        }
-        
-        // Check for success/error messages from PHP redirect (for JavaScript fallback)
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('success') === '1' && !document.querySelector('#contact .bg-green-500')) {
-            const formMessage = document.getElementById('formMessage');
-            if (formMessage) {
-                formMessage.className = 'bg-green-500 text-white p-4 rounded-lg mb-6 text-center';
-                formMessage.textContent = 'Thank you! Your message has been received. We will get back to you soon.';
-                formMessage.classList.remove('hidden');
-                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-        } else if (urlParams.get('error') === '1' && !document.querySelector('#contact .bg-red-500')) {
-            const formMessage = document.getElementById('formMessage');
-            if (formMessage) {
-                formMessage.className = 'bg-red-500 text-white p-4 rounded-lg mb-6 text-center';
-                formMessage.textContent = 'There was an error sending your message. Please try again or contact us directly.';
-                formMessage.classList.remove('hidden');
-                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-        }
-
-        // Handle sell/evaluate form submissions (JavaScript fallback)
-        if (urlParams.get('formSubmitted') === '1' && !document.querySelector('#hero .bg-green-100')) {
-            const successMessage = document.getElementById('formSuccessMessage');
-            if (successMessage) {
-                successMessage.classList.remove('hidden');
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-        } else if (urlParams.get('error') === '1' && urlParams.get('type') && !document.querySelector('#hero .bg-red-100')) {
-            const errorMessage = document.getElementById('formErrorMessage');
-            if (errorMessage) {
-                errorMessage.classList.remove('hidden');
-                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-        }
-
         var HAR_IDX_BUY_URL = 'https://www.har.com/idx/quicksearch?sitetype=aws&cid=770582&allmls=y';
         var HAR_IDX_FIND_URL = 'https://www.har.com/idx/myquicksearch?sitetype=aws&cid=770582&allmls=n';
 
@@ -979,12 +920,40 @@
         window.openHarFindModal = openHarFindModal;
         window.closeHarBuyModal = closeHarBuyModal;
 
-        (function initHarBuyModalControls() {
+        window.showSellForm = function () {
+            var sellForm = document.getElementById('sellForm');
+            var evaluateForm = document.getElementById('evaluateForm');
+            if (sellForm) {
+                sellForm.classList.remove('hidden');
+                if (evaluateForm) evaluateForm.classList.add('hidden');
+                sellForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        };
+
+        window.hideSellForm = function () {
+            var sellForm = document.getElementById('sellForm');
+            if (sellForm) sellForm.classList.add('hidden');
+        };
+
+        window.showEvaluateForm = function () {
+            var evaluateForm = document.getElementById('evaluateForm');
+            var sellForm = document.getElementById('sellForm');
+            if (evaluateForm) {
+                evaluateForm.classList.remove('hidden');
+                if (sellForm) sellForm.classList.add('hidden');
+                evaluateForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        };
+
+        window.hideEvaluateForm = function () {
+            var evaluateForm = document.getElementById('evaluateForm');
+            if (evaluateForm) evaluateForm.classList.add('hidden');
+        };
+
+        function initHarBuyModalControls() {
             var closeBtn = document.getElementById('harBuyModalClose');
             var backdrop = document.getElementById('harBuyModalBackdrop');
-            var buyBtn = document.getElementById('buyBtn');
-            var findBtn = document.getElementById('heroFindBtn');
-            var sellBtn = document.getElementById('heroSellBtn');
+            var hero = document.getElementById('hero');
             if (closeBtn) {
                 closeBtn.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -993,17 +962,72 @@
                 });
             }
             if (backdrop) backdrop.addEventListener('click', closeHarBuyModal);
-            if (buyBtn) buyBtn.addEventListener('click', openHarBuyModal);
-            if (findBtn) findBtn.addEventListener('click', openHarFindModal);
-            if (sellBtn) sellBtn.addEventListener('click', function () {
-                showSellForm();
-            });
+            if (hero) {
+                hero.addEventListener('click', function (e) {
+                    var btn = e.target.closest('[data-hdrs-action]');
+                    if (!btn || !hero.contains(btn)) return;
+                    var act = btn.getAttribute('data-hdrs-action');
+                    if (act === 'har-buy') {
+                        e.preventDefault();
+                        openHarBuyModal();
+                    } else if (act === 'har-find') {
+                        e.preventDefault();
+                        openHarFindModal();
+                    } else if (act === 'sell') {
+                        e.preventDefault();
+                        window.showSellForm();
+                    }
+                });
+            }
             document.addEventListener('keydown', function (e) {
                 if (e.key !== 'Escape') return;
                 var modal = document.getElementById('harBuyModal');
                 if (modal && !modal.classList.contains('hidden')) closeHarBuyModal();
             });
-        })();
+        }
+
+        initHarBuyModalControls();
+
+        var cyEl = document.getElementById('currentYear');
+        if (cyEl) cyEl.textContent = new Date().getFullYear();
+
+        var contactFormEl = document.getElementById('contactForm');
+        if (contactFormEl) {
+            contactFormEl.addEventListener('submit', function () {});
+        }
+
+        var urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === '1' && !document.querySelector('#contact .bg-green-500')) {
+            var formMessageOk = document.getElementById('formMessage');
+            if (formMessageOk) {
+                formMessageOk.className = 'bg-green-500 text-white p-4 rounded-lg mb-6 text-center';
+                formMessageOk.textContent = 'Thank you! Your message has been received. We will get back to you soon.';
+                formMessageOk.classList.remove('hidden');
+                formMessageOk.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        } else if (urlParams.get('error') === '1' && !document.querySelector('#contact .bg-red-500')) {
+            var formMessageErr = document.getElementById('formMessage');
+            if (formMessageErr) {
+                formMessageErr.className = 'bg-red-500 text-white p-4 rounded-lg mb-6 text-center';
+                formMessageErr.textContent = 'There was an error sending your message. Please try again or contact us directly.';
+                formMessageErr.classList.remove('hidden');
+                formMessageErr.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        if (urlParams.get('formSubmitted') === '1' && !document.querySelector('#hero .bg-green-100')) {
+            var successMessage = document.getElementById('formSuccessMessage');
+            if (successMessage) {
+                successMessage.classList.remove('hidden');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        } else if (urlParams.get('error') === '1' && urlParams.get('type') && !document.querySelector('#hero .bg-red-100')) {
+            var errorMessage = document.getElementById('formErrorMessage');
+            if (errorMessage) {
+                errorMessage.classList.remove('hidden');
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
 
         function showUnderConstruction() {
             const el = document.getElementById('actionUnderConstructionMsg');
@@ -1011,27 +1035,6 @@
                 el.classList.remove('hidden');
                 el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
-        }
-
-        // Form display functions
-        function showSellForm() {
-            document.getElementById('sellForm').classList.remove('hidden');
-            document.getElementById('evaluateForm').classList.add('hidden');
-            document.getElementById('sellForm').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        function hideSellForm() {
-            document.getElementById('sellForm').classList.add('hidden');
-        }
-
-        function showEvaluateForm() {
-            document.getElementById('evaluateForm').classList.remove('hidden');
-            document.getElementById('sellForm').classList.add('hidden');
-            document.getElementById('evaluateForm').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        function hideEvaluateForm() {
-            document.getElementById('evaluateForm').classList.add('hidden');
         }
 
         // Toggle more cities

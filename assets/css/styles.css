@@ -130,9 +130,9 @@ header {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Smooth transitions */
+/* Smooth transitions — avoid animating opacity globally (breaks hero keyframes / hit targets) */
 * {
-    transition-property: color, background-color, border-color, transform, opacity;
+    transition-property: color, background-color, border-color, transform, box-shadow;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
 }
@@ -673,6 +673,127 @@ section {
 .hero-search-animate {
     opacity: 0;
     animation: fadeInUpHero 1s ease-out 1.6s forwards;
+}
+
+/* Hero: full-bleed media must not capture clicks */
+#hero .hero-bg-layer {
+    pointer-events: none;
+}
+
+#hero .hero-cta-stack {
+    position: relative;
+    z-index: 40;
+    pointer-events: auto;
+}
+
+/* Hero CTA strip — obvious refresh vs old white card */
+.hero-cta-bar {
+    max-width: 52rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem 1.25rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(184, 134, 11, 0.55);
+    background: linear-gradient(165deg, rgba(20, 18, 14, 0.92) 0%, rgba(40, 32, 20, 0.88) 100%);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@media (min-width: 640px) {
+    .hero-cta-bar {
+        padding: 1.75rem 2rem;
+    }
+}
+
+.hero-cta-bar__lead {
+    margin: 0 0 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: rgba(255, 248, 235, 0.92);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.hero-cta-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+    .hero-cta-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+}
+
+.hero-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.125rem;
+    padding: 0.75rem 1.35rem;
+    border-radius: 9999px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid transparent;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.hero-cta-btn:active {
+    transform: scale(0.98);
+}
+
+.hero-cta-btn:focus-visible {
+    outline: 2px solid #d4a84b;
+    outline-offset: 3px;
+}
+
+.hero-cta-btn--buy {
+    background: linear-gradient(180deg, #a67c1f 0%, #6b4e0f 100%);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.hero-cta-btn--buy:hover {
+    background: linear-gradient(180deg, #c9972e 0%, #8b6914 100%);
+}
+
+.hero-cta-btn--sell {
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.55);
+}
+
+.hero-cta-btn--sell:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-cta-btn--find {
+    background: rgba(0, 0, 0, 0.35);
+    color: #f5e6c8;
+    border-color: #b8860b;
+}
+
+.hero-cta-btn--find:hover {
+    background: rgba(139, 105, 20, 0.45);
+    color: #fff;
+}
+
+@media (min-width: 640px) {
+    .hero-cta-btn {
+        min-width: 11.5rem;
+    }
 }
 
 /* Hero video: hide when user prefers reduced motion (static JPG remains) */
