@@ -686,8 +686,11 @@ section {
     pointer-events: auto;
 }
 
-/* Hero CTA strip — obvious refresh vs old white card */
-.hero-cta-bar {
+/*
+ * Hero CTA — #hero + button element beats Tailwind preflight / load order.
+ * !important on resets Tailwind applies to button (background-image: none, etc.).
+ */
+#hero .hero-cta-bar {
     max-width: 52rem;
     margin-left: auto;
     margin-right: auto;
@@ -699,12 +702,12 @@ section {
 }
 
 @media (min-width: 640px) {
-    .hero-cta-bar {
+    #hero .hero-cta-bar {
         padding: 1.75rem 2rem;
     }
 }
 
-.hero-cta-bar__lead {
+#hero .hero-cta-bar__lead {
     margin: 0 0 1rem;
     font-size: 0.9375rem;
     line-height: 1.5;
@@ -713,14 +716,14 @@ section {
     letter-spacing: 0.02em;
 }
 
-.hero-cta-row {
+#hero .hero-cta-row {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
 }
 
 @media (min-width: 640px) {
-    .hero-cta-row {
+    #hero .hero-cta-row {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
@@ -728,70 +731,83 @@ section {
     }
 }
 
-.hero-cta-btn {
-    display: flex;
+#hero .hero-cta-row button.hero-cta-btn {
+    box-sizing: border-box;
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
+    width: 100%;
     min-height: 3.125rem;
-    padding: 0.75rem 1.35rem;
-    border-radius: 9999px;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 600;
-    font-size: 0.9375rem;
+    padding: 0.75rem 1.35rem !important;
+    margin: 0;
+    border-radius: 9999px !important;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif !important;
+    font-weight: 600 !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.25 !important;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    cursor: pointer;
-    border: 2px solid transparent;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    border-style: solid !important;
+    border-width: 2px !important;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     user-select: none;
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-.hero-cta-btn:active {
+#hero .hero-cta-row button.hero-cta-btn:active {
     transform: scale(0.98);
 }
 
-.hero-cta-btn:focus-visible {
+#hero .hero-cta-row button.hero-cta-btn:focus-visible {
     outline: 2px solid #d4a84b;
     outline-offset: 3px;
 }
 
-.hero-cta-btn--buy {
-    background: linear-gradient(180deg, #a67c1f 0%, #6b4e0f 100%);
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.25);
+#hero .hero-cta-row button.hero-cta-btn.hero-cta-btn--buy {
+    background: linear-gradient(180deg, #a67c1f 0%, #6b4e0f 100%) !important;
+    background-image: linear-gradient(180deg, #a67c1f 0%, #6b4e0f 100%) !important;
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
-.hero-cta-btn--buy:hover {
-    background: linear-gradient(180deg, #c9972e 0%, #8b6914 100%);
+#hero .hero-cta-row button.hero-cta-btn.hero-cta-btn--buy:hover {
+    background: linear-gradient(180deg, #c9972e 0%, #8b6914 100%) !important;
+    background-image: linear-gradient(180deg, #c9972e 0%, #8b6914 100%) !important;
 }
 
-.hero-cta-btn--sell {
-    background: rgba(255, 255, 255, 0.07);
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.55);
+#hero .hero-cta-row button.hero-cta-btn.hero-cta-btn--sell {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    background-image: none !important;
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.55) !important;
 }
 
-.hero-cta-btn--sell:hover {
-    background: rgba(255, 255, 255, 0.16);
-    border-color: rgba(255, 255, 255, 0.8);
+#hero .hero-cta-row button.hero-cta-btn.hero-cta-btn--sell:hover {
+    background-color: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.85) !important;
 }
 
-.hero-cta-btn--find {
-    background: rgba(0, 0, 0, 0.35);
-    color: #f5e6c8;
-    border-color: #b8860b;
+#hero .hero-cta-row button.hero-cta-btn.hero-cta-btn--find {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    background-image: none !important;
+    color: #f5e6c8 !important;
+    border-color: #b8860b !important;
 }
 
-.hero-cta-btn--find:hover {
-    background: rgba(139, 105, 20, 0.45);
-    color: #fff;
+#hero .hero-cta-row button.hero-cta-btn.hero-cta-btn--find:hover {
+    background-color: rgba(139, 105, 20, 0.5) !important;
+    color: #fff !important;
 }
 
 @media (min-width: 640px) {
-    .hero-cta-btn {
+    #hero .hero-cta-row button.hero-cta-btn {
+        width: auto;
         min-width: 11.5rem;
     }
 }

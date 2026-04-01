@@ -15,9 +15,6 @@
     <!-- Local Fonts -->
     <link rel="stylesheet" href="assets/fonts/fonts.css">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    
     <!-- Tailwind Custom Colors -->
     <script>
         tailwind.config = {
@@ -35,6 +32,7 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=hero2">
 </head>
 <body class="bg-white text-black font-sans">
     
